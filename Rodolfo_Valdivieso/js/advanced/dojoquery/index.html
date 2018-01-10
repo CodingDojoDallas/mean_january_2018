@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.min.js">	</script>	
+
+</head>
+<body>
+	<button id="button1">Test1</button>
+</body>
+<script>
+	$(document).ready(function(){
+		// document.getElementById // (makes a DOMobject accessible to JavaScript) takes in one parameter which is the id for a particular element
+		// DOMobject.addEventListener //takes in 2 parameters 1) the event 2) the callback function (Note that this method must be run on an html element)
+		// //Also note that you will need to pay attention to the following built in events from the DOM
+		// DOMobject.click
+		// DOMobject.mouseover
+		// DOMobject.mouseout
+
+		// var button1 = document.getElementById("button1")
+		// button1.addEventListener("click", whatToDoOnClick);
+		// function whatToDoOnClick() {
+		//   alert("You Did it!")
+		// }
+
+
+	});
+
+		function $Dojo(name){
+			return document.getElementById(name);
+		}
+
+		//(function() {
+			$Dojo("button1").addEventListener("click", function() { console.log("The button was clicked!") });
+
+			$Dojo("button1").addEventListener("mouseover", function() { console.log("The button was hovered on!") });
+
+			$Dojo("button1").addEventListener("mouseout", function() { console.log("The button was hovered off!") });
+
+			//$Dojo("button1").click(function() { console.log("The button was clicked!") });
+			// $Dojo("button2").hover(function() { console.log("The button was hovered on!") });
+
+
+
+		//}());
+	</script>
+</html>
