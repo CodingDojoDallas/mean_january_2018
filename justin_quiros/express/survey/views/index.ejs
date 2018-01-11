@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+</head>
+<body>
+	<div>
+		<form action="submit" method="post">
+			<table>
+				<tr>
+					<td>Your Name: </td>
+					<td><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+					<td>Dojo Location: </td>
+					<td>
+						<select name="location">
+							<option value="Dallas">Dallas</option>
+							<option value="Tulsa">Tulsa</option>
+							<option value="Silicon Valley">Silicon Valley</option>
+							<option value="Seattle">Seattle</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Favorite Language: </td>
+					<td>
+						<select name="language">
+							<option value="Ruby">Ruby on Rails</option>
+							<option value="MEAN">MEAN</option>
+							<option value="Python">Python</option>
+							<option value="iOS">iOS</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<p>Comment (optional):</p>
+			<input type="text" name="comment" />
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+</body>
+</html>
