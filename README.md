@@ -29,5 +29,6 @@ Angular Registration - https://scotch.io/tutorials/how-to-implement-a-custom-val
 Fundamentals - https://www.youtube.com/watch?v=OG2a8vQ0KLg <br>
 JS Advanced / Node Intro - https://youtu.be/L_0fyuUhrhM <br>
 Express - https://youtu.be/291A_DFacPw <br>
+Mongoose - https://youtu.be/v9M8POVHWdo <br>
 
 ## Demos:
