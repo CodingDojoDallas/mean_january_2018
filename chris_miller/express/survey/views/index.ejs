@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Survey Form</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id='wrapper'>
+			<div class='form_wrapper'>
+				<form action="/submit" method='post'>
+				<p>Your Name: <input class='align_right' type="text" name="name"></p>
+				<p>Dojo Location: 
+					<select class='align_right' name='location'>
+						<option value='Dallas'>Dallas</option>
+						<option value='Seattle'>Seattle</option>
+						<option value='Chicago'>Chicago</option>
+					</select>
+				</p>
+				<p>Favorite Language:
+					<select class='align_right' name='language'>
+						<option value='JavaScript'>JavaScript</option>
+						<option value='Python'>Python</option>
+						<option value='Ruby'>Ruby</option>
+					</select>
+				</p>
+				<p>Comment (optional):</p>
+				<p><textarea name="comment" rows="3" cols="32"></textarea></p>
+				<p><button class='align_right'>Submit</button></p>
+			</form>
+			</div>			
+		</div> <!-- end wrapper -->
+	</body>
+</html>

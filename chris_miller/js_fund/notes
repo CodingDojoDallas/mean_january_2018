@@ -1,0 +1,59 @@
+1/8 - Primitive datatypes pass by value
+Non-primitive datatypes pass by reference
+
+String interpolation 
+let firstName = "Oscar";
+let lastName = "Vazquez";
+let message = `Hello, my name is ${firstName} ${lastName}`;
+// Take note of the backticks instead of quotes
+console.log(message);
+
+1.9 - OOP
+immediate function -- Look this up
+
+var cat = new Cat('Fluffy')
+methods are functions within classes
+
+this.walk = function(){
+	console.log('walking');
+}
+
+cat.walk()
+
+.prototype 
+
+Cat.prototype.walk = function()
+{
+	console.log('walking');
+}
+
+Cat.prototype = { lots of functions }
+
+{} = Object
+
+ES6 Way of doing things
+
+prototype is automatic as such:
+
+class Cat {
+	constructor
+
+}
+
+class Cat extends Animal
+
+the this problem:
+let self = this;
+
+self.name IS the new reference call
+
+
+
+
+
+
+
+
+
+
+
