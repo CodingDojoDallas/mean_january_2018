@@ -55,7 +55,7 @@ var server = http.createServer( function(req, res) {
         	res.end();
     	});
   	}
-  	else if(req.url === '/images/mclaren.jpg'){
+  	else if(req.url === '/potato'){
     // notice we won't include the utf8 encoding
     	fs.readFile('./images/mclaren.jpg', function(errors, contents){
         	res.writeHead(200, {'Content-type': 'image/jpg'});
