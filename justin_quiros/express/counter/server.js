@@ -28,7 +28,8 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
 	if(session.counter == undefined){
 		console.log('counter not set');
-		counter = session.counter = 1;
+		session.counter = 1;
+		counter = session.counter
 	}
 	else{
 		console.log('incrementing');
