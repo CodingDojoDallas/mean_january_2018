@@ -26,25 +26,26 @@ app.set('view engine', 'ejs');
 
 // root route to render the index.ejs view
 app.get('/', function(req, res) {
-	if(req.session.counter == undefined){
-		req.session.counter = 0;
-		counter = req.session.counter;
+	if(session.counter == undefined){
+		console.log('counter not set');
+		counter = session.counter = 1;
 	}
 	else{
-		counter = req.session.counter++;
+		console.log('incrementing');
+		counter = session.counter += 1;
 	}
  res.render("index");
 })
 
 app.post('/plusTwo', function(req, res) {
-	req.session.counter++
-	console.log(req.session.counter);
+	session.counter++
+	console.log(session.counter);
  res.redirect("/");
 })
 
 app.post('/reset', function(req, res) {
-	req.session.counter = 0
-	console.log(req.session.counter);
+	session.counter = 0
+	console.log(session.counter);
  res.redirect("/");
 })
 
