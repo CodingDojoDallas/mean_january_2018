@@ -45,10 +45,7 @@ app.set('view engine', 'ejs');
 
 // root route to render the index.ejs view
 app.get('/', function(req, res) {
-	// users = User.find({}, function(err, users){
-	// 	console.log("here i am" , users);
 	res.render("index")
-	// })
 })
 
 app.get('/quotes', function(req, res) {
@@ -75,35 +72,8 @@ app.post('/quote', function(req, res) {
 	})
 })
 
-
-
-
-// post route for adding a user
-// app.post('/submit', function(req, res) {
-//  console.log("POST DATA", req.body);
-//  session.form_data = req.body;
-//  res.redirect("result");
-// })
-
-// app.get('/result', function(req, res) {
-// 	context = {
-// 		'name': session.form_data.name,
-// 		'location': session.form_data.location,
-// 		'language': session.form_data.language,
-// 		'comment': session.form_data.comment
-// 	}
-//  res.render("result", context);
-// })
-
-
 // tell the express app to listen on port 8000
 var server = app.listen(8000, function() {
  console.log("listening on port 8000");
 });
 
-// var io = require('socket.io').listen(server);
-// io.sockets.on('connection', function (socket) {
-//   console.log("Client/socket is connected!");
-//   console.log("Client/socket id is: ", socket.id);
-//   // all the server socket code goes in here
-// })
