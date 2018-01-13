@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Quoting Dojo</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Here are the awesome quotes!</h1>
+	<% if(typeof(errors) != 'undefined' ) { %>
+	     <% for (var x in errors) { %>
+	      <h3><%= errors[x].message %></h3>
+	     <% } %>
+	 <% } %>
+	 
+		<table>
+			<% quotes.forEach(function (quote) { %>
+			<tr>
+				<td><%= quote.quote %></td>
+			</tr>
+			<tr>
+				<td>&emsp;- <%= quote.name %> at <%= moment(quote.createdAt).format( 'MMM-DD-YYYY') %></td>
+			</tr>
+			<% }) %>
+		</table>
+	
+	<button><a href="/">Go Back</a></button>
+</body>
+</html>
