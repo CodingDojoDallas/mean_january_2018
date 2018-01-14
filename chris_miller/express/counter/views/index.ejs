@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id='wrapper'>
+		<p>Counter:</p>
+		<p><%= counter %></p>
+		<form action="/add_2" method="post">
+			<p>Click Here to add 2: <button type="submit">Submit</button></p>
+		</form>
+		<form action="/reset" method="post">
+			<p>Click Here to reset counter: <button type="submit">Submit</button></p>
+		</form>
+	</div>
+
+</body>
+</html>

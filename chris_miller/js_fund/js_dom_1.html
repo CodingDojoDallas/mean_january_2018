@@ -1,0 +1,26 @@
+<html>
+<body>
+    <h1>Students</h1>
+    <ul id="main">
+        <!-- this is empty-->
+    </ul> 
+<script>
+    function appendList(array, id)
+    {
+        for (var i = 0; i < array.length; i++)
+        {
+        	let new_student = document.createElement("li");
+    		// create an empty li
+    		new_student.innerHTML = array[i];
+    		// modify its innerHTML content with a string
+    		document.getElementById("main").appendChild(new_student);
+    		// append our new DOM element to the id 'main'
+        }
+    }
+
+    let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+    let target_id = "main";
+    appendList(students, target_id);
+</script>   
+</body>
+</html>
