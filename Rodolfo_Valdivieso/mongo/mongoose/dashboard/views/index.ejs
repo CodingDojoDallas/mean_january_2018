@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mongoose Dashboard</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Here are the awesome Mongooses!</h1>
+	<% if(typeof(errors) != 'undefined' ) { %>
+	     <% for (var x in errors) { %>
+	      <h3><%= errors[x].message %></h3>
+	     <% } %>
+	 <% } %>
+	 
+		<table>
+			<tr>
+				<td><h3>Name</h3></td>
+				<td><h3>Weight</h3></td>
+				<td><h3>Height</h3></td>
+				<td><h3>Creation date</h3></td>
+				<td><h3>Action</h3></td>
+			</tr>
+			<% animals.forEach(function (animal) { %>
+			<tr>
+				<td><a href="/mongooses/<%= animal.id %>"><%= animal.name %></a></td>
+				<td><%= animal.weight %></td>
+				<td><%= animal.height %></td>
+				<td><%= moment(animal.createdAt).format( 'MMM-DD-YYYY') %></td>
+				<td>
+					<a href="/mongooses/<%= animal.id %>">Show</a>
+					<a href="/mongooses/edit/<%= animal.id %>">Edit</a>
+					<form action="/mongooses/destroy/<%= animal.id %>" method="post"><button>Delete</button></form>
+					<!-- <a href="/mongooses/destroy/<%= animal.id %>" data-method="POST">Delete</a> -->
+					
+				</td>
+			</tr>
+			<% }) %>
+		</table>
+	<button><a href="/mongooses/new">New Mongoose</a></button>
+	
+</body>
+</html>
