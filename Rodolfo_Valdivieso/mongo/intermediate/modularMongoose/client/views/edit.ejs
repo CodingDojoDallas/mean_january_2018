@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mongoose Dashboard</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Show Animal!</h1>
+	<% if(typeof(errors) != 'undefined' ) { %>
+	     <% for (var x in errors) { %>
+	      <h3><%= errors[x].message %></h3>
+	     <% } %>
+	 <% } %>
+	 <form action="/mongooses/<%= animal.id %>" method="post">
+		<table>
+			<tr>
+				<td><label for="">Name:</label></td>
+				<td><input type="text"  name="name" id="name" value="<%= animal.name %>"></td>
+			</tr>
+			<tr>
+				<td><label for="">Weight:</label></td>
+				<td><input type="text" name="weight" id="weight" value="<%= animal.weight %>">	</td>
+			</tr>
+			<tr>
+				<td><label for="">Height:</label></td>
+				<td><input type="text" name="height" id="height" value="<%= animal.height %>"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><button>Update</button> </td>
+			</tr>
+		</table>
+	<button><a href="/">Dashboard</a></button>
+	</form>
+</body>
+</html>
