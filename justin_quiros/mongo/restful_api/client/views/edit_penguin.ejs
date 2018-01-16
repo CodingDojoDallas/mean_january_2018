@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <% for(i in penguin) {%>
+        <title>Edit <%= penguin[i].name %></title>
+        <link rel='stylesheet' href='/style.css' />
+    	<link rel="stylesheet" href="/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header">
+                        <h1>Edit <%= penguin[i].name %></h1>
+                    </div> 
+                </div>
+            </div>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6">
+                        <form action="/penguins/<%= penguin[i].id %>" method="post">
+                            <table class="table text-center">
+                                <tr>
+                                    <td>Name:</td><td><input type="text" name="name" value="<%= penguin[i].name %>"></td>     
+                                </tr>
+                                <tr>
+                                    <td>Best Friend:</td><td><input type="text" name="best_friend" value="<%= penguin[i].best_friend %>"></td>     
+                                </tr>
+                                <tr>
+                                    <td>Age:</td><td><input type="number" name="age" value="<%= penguin[i].age %>"></td>     
+                                </tr>
+                            </table>
+                            <button type="submit">Edit <%= penguin[i].name %></button>
+                        </form>
+                        <form action="/penguins/destroy/<%= penguin[i].id %>" method="post">
+                            <button type="submit">Delete Penguin</button>
+                        </form>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <% } %>
+</html>

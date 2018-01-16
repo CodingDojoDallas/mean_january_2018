@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Penguin Dashboard</title>
+    <link rel='stylesheet' href='/style.css' />
+	<link rel="stylesheet" href="/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+<!--     <script type ="text/javascript">
+         $(document). ready(function (){
+            // this triggers the connection event in our server!
+            var socket  = io.connect();
+            // we'll write all the socket stuff after the above line!
+        })
+    </script> -->
+</head>
+<body>
+    <div class="main">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header">
+                    <h1>Check out all the Penguins!</h1>
+                </div> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 center-block">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Best Friend</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i in penguins) { %>
+                        <tr>
+                            <td><%= penguins[i].name %></td>
+                            <td><%= penguins[i].age %></td>
+                            <td><%= penguins[i].best_friend %></td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
