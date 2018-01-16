@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+	<title>Index Page</title>
+</head>
+<body>
+	<h1>Ligers Page!</h1>
+	<% for (var i in ligers) { %>
+		<p>Name: <a href="/ligers/<%= ligers[i]._id %>"><%= ligers[i].name %></a></p>
+		<p>Age: <%= ligers[i].age %></p>
+		<p>Color: <%= ligers[i].color %></p>
+		<form action='/ligers/destroy/<%= ligers[i]._id %>' method='post'>
+			<input type="submit", value="Delete This Liger">
+		</form>
+		<hr>
+	<% } %>
+	<a href="/ligers/new"><button type="button" name="button">Add a Liger</button></a>
+</body>
+</html>

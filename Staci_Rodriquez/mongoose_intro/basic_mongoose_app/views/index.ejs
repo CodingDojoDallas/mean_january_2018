@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+	<!-- <form action='/users' method="POST">
+		<label for="name">Your Name: </label><input type="text" name="name"></p>
+		<label for="age">Your Age: </label><input type="text" name="age"></p>
+		<input type="submit" value="Submit">
+	</form> -->
+
+	<h4>Submitted Users</h4>
+	<% for (var i in users) { %>
+		<p>Name: <%= users[i].name %></p>
+		<p>Age: <%= users[i].age %></p><br>
+	<% } %>
+</body>
+</html>
