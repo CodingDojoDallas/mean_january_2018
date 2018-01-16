@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <title>Index</title>
+</head>
+    <body>
+        <h3>Edit kitty</h3>
+        <form action='/kitty/<%= kitty._id %>' method="POST">
+            <label for="name">Name: </label><input type="text" name="name" value="<%= kitty.name %>"></p>
+            <label for="age">Age: </label><input type="text" name="age" value="<%= kitty.age %>"></p>
+            <label for="color">Color: </label><input type="text" name="color" value="<%= kitty.color %>"></p>
+            <input type="submit" value="Edit Kity">
+        </form>
+        <a href="/"><button type="button" name="button">All Kitties</button> </a>
+    </body>
+</html>

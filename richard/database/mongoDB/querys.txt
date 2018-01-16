@@ -25,6 +25,7 @@ less than or equal to 10
 between 1 and 9 (inclusive)
     db.students.find({lucky_number:{$in:[1,2,3,4,5,6,7,8,9]}})
     db.students.find({$and: [{lucky_number:{$gt:1}},{lucky_number:{$lte:9}}]})
+    db.students.find({lucky_number:{$gte:1, $lte:9}})
 
 Add a field to each student collection called 'interests' that is an ARRAY.  It should contain the following entries: 'coding', 'brunch', 'MongoDB'. Do this in ONE operation.
     db.students.updateMany({}, {$set: {interests: ["coding", "brunch", "MongoDB"]}})
