@@ -1,0 +1,75 @@
+<html>
+<head></head>
+<body></body>
+<script>
+    class Deck{
+        constructor(){
+            this.reset();
+            this.shuffle();
+        }
+
+        // Fisher-Yates Shuffle
+        shuffle(){
+            var m = this.cards.length, t, i;
+            // While there remain elements to shuffle...
+            while (m) {
+                // Pick a remaining element…
+                i = Math.floor(Math.random() * m--);
+                // And swap it with the current element.
+                t = this.cards[m];
+                this.cards[m] = this.cards[i];
+                this.cards[i] = t;
+            }
+            return this.cards;
+        }
+
+        // RESET / Construct new deck
+        reset(){
+            this.cards = [];
+            let rank = ["A",2,3,4,5,6,7,8,9,10,"J","Q","K"];
+            let suit = ["\u2660", "\u2665", "\u2666", "\u2663"];
+            for (let i = 0; i < 13; i++){
+                this.cards.push(`${rank[i]}${suit[0]}`); // spade
+                this.cards.push(`${rank[i]}${suit[1]}`); // heart
+                this.cards.push(`${rank[i]}${suit[2]}`); // diamond
+                this.cards.push(`${rank[i]}${suit[3]}`); // club
+            }
+            return this.cards;
+        }
+
+        // Return dealt card, and remove from deck
+        deal(){
+            return this.cards.pop();
+        }
+        
+    }
+
+    class Player{
+        constructor(name){
+            this.name = name;
+            this.hand = [];
+        }
+        draw(deck){
+            if (deck instanceof Deck){
+                this.hand.push(deck.deal());
+                console.log(this.hand);
+            }
+            else console.log("Indicate which deck to draw from.");
+        }
+        // discard last card added to hand
+        discard(){
+            return this.hand.pop();
+        }
+    }
+
+    // TESTS
+    const d1 = new Deck();
+    console.log(d1.cards);
+    const p1 = new Player("Arden");
+    console.log(p1);
+    p1.draw(d1);
+
+    // Optional, create blackjack game
+
+</script>
+</html>
