@@ -46,7 +46,7 @@ app.set('view engine', 'ejs');
 // root route to render the index.ejs view
 app.get('/', function(req, res) {
 	penguins = Penguin.find({}, function(err, penguins){
-		// console.log("here i am" , penguins);
+		console.log("here i am" , penguins);
 		res.render("index", {'penguins': penguins});
 	})
 })
@@ -56,12 +56,12 @@ app.get('/penguins/new', function(req, res) {
 })
 
 app.get('/penguin/:id', function(req, res) {
-	penguin = Penguin.find({id: req.id}, function(err, penguin){
-		// console.log("here i am" , penguin);
+	var id = req.params.id;
+    var o_id = new ObjectId(id);
+	penguin = Penguin.find({_id: o_id}, function(err, penguin){
 		res.render("penguin", {'penguin': penguin});
 	})
 })
-
 app.get('/penguins/edit/:id', function(req, res) {
 	var id = req.params.id;
     var o_id = new ObjectId(id);
@@ -122,7 +122,7 @@ app.post('/penguins/destroy/:id', function(req, res) {
 })
 
 // tell the express app to listen on port 8000
-var server = app.listen(8000, function() {
- console.log("listening on port 8000");
+var server = app.listen(6789, function() {
+ console.log("listening on port 6789");
 });
 
