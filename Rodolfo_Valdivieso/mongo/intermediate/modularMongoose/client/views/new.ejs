@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Moongose Dashboard</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Add a New Moongose</h1>
+	<% if(typeof(errors) != 'undefined' ) { %>
+	     <% for (var x in errors) { %>
+	      <h3><%= errors[x].message %></h3>
+	     <% } %>
+	 <% } %>
+	<form action="/mongooses" method="post">
+		<table>
+			<tr>
+				<td><label for="">Name:</label></td>
+				<td><input type="text" name="name" id="">	</td>
+			</tr>
+			<tr>
+				<td><label for="">Weight:</label></td>
+				<td><input type="text" name="weight" id="">	</td>
+			</tr>
+			<tr>
+				<td><label for="">Height:</label></td>
+				<td><input type="text" name="height" id="">	</td>
+			</tr>
+			<tr><td colspan="2"><button>Add Animal</button></td></tr>
+		</table>
+	</form>
+	<button><a href="/">Dashboard</a></button>
+</body>
+</html>

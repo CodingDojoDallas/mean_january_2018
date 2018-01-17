@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Survey Form</title>
+</head>
+<body>
+	<h1>Survey Form</h1>
+	<form action="/goback" method="post">
+		<table>
+			<tr>
+				<td><label for="">Name:</label></td>
+				<td><%= context.name %></td>
+			</tr>
+			<tr>
+				<td><label for="">Dojo Location:</label></td>
+				<td>
+					<%= context.location %>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="">Favorite Language:</label></td>
+				<td>
+					<%= context.language %>
+				</td>
+			</tr>
+			<tr>
+				<td>Comment(optional):</td>
+			</tr>
+			<tr>
+				<td><%= context.comment %></td>
+			</tr>
+			<tr><td><button>Go Back</button></td></tr>
+		</table>
+		
+	</form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Dojo Message Board</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<% if(typeof(errors) != 'undefined' ) { %>
+	     <% for (var x in errors) { %>
+	      <h3><%= errors[x].message %></h3>
+	     <% } %>
+	 <% } %>
+	 <h1>The Dojo Message Board</h1>
+	 <form action="/posts" method="post">
+	 	<table>
+	 		<tr>
+	 			<td>Name:</td>
+	 		</tr>
+	 		<tr>
+	 			<td><input type="text" name="name" id="name"></td>
+	 		</tr>
+	 		<tr>
+	 			<td>Message:</td>
+	 		</tr>
+	 		<tr>
+	 			<td><textarea name="text" id="text" cols="30" rows="10"></textarea></td>
+	 		</tr>
+	 		<tr><td><button>Post Message</button></td></tr>
+	 	</table>
+	 	***************************************
+	 </form>
+	 
+		<table>
+			<% posts.forEach(function (post) { %>
+			<tr>
+				<td><h2>Poster Name: <%= post.name %></h2></td>
+			</tr>
+			<tr>
+				<td><h2>Post Message: <%= post.text %></h2></td>
+			</tr>
+				
+				<% post.comments.forEach(function (comment) { %>
+					<tr>
+						<td>&emsp;Name: <%= comment.name %>, Comment: <%= comment.text %></td>
+					</tr>
+				<% }) %>
+
+			<tr>	
+				<td>
+					<form action="/posts/<%= post.id %>/comment" method="post">
+					 	<table>
+					 		<tr>
+					 			<td>&emsp;Name:</td>
+					 		</tr>
+					 		<tr>
+					 			<td>&emsp;<input type="text" name="name" id="name"></td>
+					 		</tr>
+					 		<tr>
+					 			<td>&emsp;Comment:</td>
+					 		</tr>
+					 		<tr>
+					 			<td>&emsp;
+					 				<textarea name="text" id="text" cols="30" rows="10"></textarea>
+					 			</td>
+					 		</tr>
+					 		<tr><td>&emsp;<button>Post comment</button></td></tr>
+					 	</table>
+					 </form>
+				</td>
+			</tr>
+			<% }) %>
+		</table>
+	
+</body>
+</html>
