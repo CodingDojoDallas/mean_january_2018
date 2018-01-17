@@ -1,0 +1,42 @@
+/* Game of Thrones */
+*{
+	margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+body{
+    font-size: 1em;
+}
+
+.description{
+    border: 2px solid black;
+    height: 200px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+table{
+    padding-top: 16px;
+    width: 1000px;
+    margin: 0 auto;
+    table-layout: fixed;
+    empty-cells: show;
+}
+img{
+    width: 200px;
+    border: 2px solid black;
+    display: inline-block;
+}
+img:hover{
+    border: 2px solid maroon;
+    box-shadow: 0 0 8px black;
+}
+tr{
+    height: 120px;
+    width: 100%;
+}
+table td{
+    padding-bottom: 12px;
+    text-align: center;
+}
