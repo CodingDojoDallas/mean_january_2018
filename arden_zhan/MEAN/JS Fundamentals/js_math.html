@@ -1,0 +1,65 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+    // Math 1
+    function zero_negativity(arr){
+        for (let x = 0; x < arr.length; x++){
+            if (Math.sign(arr[x]) == -1) return false;
+        }
+        return true;
+    }
+
+    // Math 2
+    function is_even(num){
+        if (Math.abs(num % 2) == 1) return "false";
+        if (Math.abs(num % 2) == 0) return "true";
+    }
+
+    // Math 3
+    function how_many_even(arr){
+        let count = 0;
+        for (let x = 0; x < arr.length; x++){
+            if (is_even(arr[x])) count++;
+        }
+        return count;
+    }
+
+    // Math 4
+    // Return an array of random numbers between 0 and 9 with the length of n
+    function create_dummy_array(n){
+        let arr = [];
+        for (let x = 0; x < n; x++){
+            arr.push(Math.floor(Math.random() * 10));
+        }
+        return arr;
+    }
+
+    // Math 5
+    // Return a random element of the array, based on its length. This function should never return undefined.
+    function random_choice(arr){
+        if (!Array.isArray(arr) || arr.length == 0) return "Not Array / Empty Array";
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // TESTS
+    // Math 1
+    console.log(zero_negativity([0, 1]));   // true
+    console.log(zero_negativity([0, -1]));  // false
+
+    // Math 2
+    console.log(is_even(3));    // false
+    console.log(is_even(4));    // true
+    
+    // Math 3
+    console.log(how_many_even([0, 1, 2])); // 1
+
+    // Math 4
+    console.log(create_dummy_array(5)); // random array of 0-9 with length 5
+
+    // Math 5
+    console.log(random_choice([0,1,2,3,4])); // random element 0,1,2,3 or 4
+</script>
+</body>
+</html>

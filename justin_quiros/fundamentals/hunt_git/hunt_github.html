@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+// Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+$( document ).ready(function() {
+	$.get("https://api.github.com/users/jquiros2290", displayName)
+	
+	var button = document.getElementById("someButton")
+	button.addEventListener("click", displayName)
+
+	function displayName(data) {
+	  console.log(data);
+	}
+});
+
+</script>
+<head>
+	<title>Hunt Gitbhub</title>
+</head>
+<body>
+
+<button id="someButton">Click Me!</button>
+
+
+
+</body>
+</html>
+
+
+
+

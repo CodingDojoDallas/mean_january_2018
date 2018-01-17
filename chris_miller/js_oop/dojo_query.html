@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dojo Query</title>
+	</head>
+	<h1 id = "welcome">Welcome to DOJO QUERY!</h1>
+	<body>
+		<script type="text/javascript">
+			var $Dojo = (function())
+			{
+				return function(id)
+				{
+					this.element = document.getElementByID(id);
+
+					this.click = function(callback)
+					{
+						this.element.addEventListener('click', callback);
+					}
+
+					this.element.addEventListener('click', function(callback))
+					return this.element;
+				}
+			})();
+
+		</script>
+		<script type="text/javascript">
+			$Dojo('intro').click(function () { alert('hello') })
+
+		</script>
+
+	</body>
+</html>

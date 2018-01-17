@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Quoting Dojo</title>
+    <link rel='stylesheet' href='/style.css' />
+	<link rel="stylesheet" href="/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+<!--     <script type ="text/javascript">
+         $(document). ready(function (){
+            // this triggers the connection event in our server!
+            var socket  = io.connect();
+            // we'll write all the socket stuff after the above line!
+        })
+    </script> -->
+</head>
+<body>
+    <div class="main">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header">
+                    <h1>Welcome to QuotingDojo</h1>
+                </div> 
+            </div>
+        </div>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <form action="/quote" method="post">
+                        <table class="table text-center">
+                            <tr>
+                                <td><input type="text" name="name" placeholder="Your Name"></td>     
+                            </tr>
+                            <tr>
+                                <td><textarea name="quote" placeholder="Write your quote here!"></textarea></td>    
+                            </tr>
+                        </table>
+                        <button type="submit">Add my quote!</button>
+                    </form>
+                        <button><a href="/quotes">Skip to quotes!</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
