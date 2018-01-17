@@ -1,1 +1,4 @@
-intro_to_MongoDB
+- use my_first_db
+- db.createCollection("students")
+// documents should have following format: ({name: STRING, home_state: STRING, lucky_number: NUMBER, birthday: {month: NUMBER, day: NUMBER, year: NUMBER}})
+- db.my_first_db.insert({name: "Eric", home_state: "Texas", lucky_number: 8, birthday: {month: 5, day: 28, year: 1995}})

@@ -30,6 +30,10 @@
 		function updateText()
 		{
 			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
+			if (el.innerHTML == " ")
+			{
+				el.innerHTML = '&nbsp';
+			}
 			if(character_counter == words[word_counter].length+1)
 			{
 				word_counter++; 	//choose a different word

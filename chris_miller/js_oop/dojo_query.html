@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 	<head>
 		<title>Dojo Query</title>
@@ -10,7 +10,7 @@
 			{
 				return function(id)
 				{
-					this.element = document.getElementByID(id);
+					this.element = document.getElementByID();
 
 					this.click = function(callback)
 					{
@@ -29,4 +29,36 @@
 		</script>
 
 	</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<script src="jquery-3.2.1.min.js"></script>
+<head>
+<script>
+$( document ).ready(function() {
+	var buttonA = document.getElementById("someButton")
+	buttonA.addEventListener("click", clicked)
+	var buttonB = document.getElementById("otherButton")
+	buttonB.addEventListener("mouseover", hover)
+	var buttonC = document.getElementById("otherButton")
+	buttonB.addEventListener("mouseout", offHover)
+	function clicked() {
+	  alert("You clicked the button!");
+	}
+	function hover(){
+		buttonB.setAttribute("style", "background-color:green;")
+	}
+	function offHover(){
+		buttonB.setAttribute("style", "background-color:white;")
+	}
+});
+</script>
+	<title>Dojo Library</title>
+</head>
+<body>
+<h1>Dojo Library</h1>
+<button id="someButton">Some Button</button>
+<button id="otherButton">Other Button</button>
+
+</body>
 </html>
