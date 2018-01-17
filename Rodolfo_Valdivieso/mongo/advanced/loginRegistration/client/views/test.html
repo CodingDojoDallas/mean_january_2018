@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login and Registration!</title>
+</head>
+<body>
+	<h1>Log in</h1>
+	<form action="/sessions/login" method="post">
+		<table>
+			<tr>
+				<td><label for="">Email:</label></td>
+				<td><input type="email" name="email" id="email"></td>
+			</tr>
+			<tr>
+				<td><label for="">Password:</label></td>
+				<td><input type="password" name="password" id="password"></td>
+			</tr>
+			<tr>
+				<td>
+					<button>Login</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<h1>Create New Account</h1>
+	<form action="/sessions/new" method="post">
+		<table>
+			<tr>
+				<td><label for="">First Name:</label></td>
+				<td><input type="text" name="first_name" id="first_name"></td>
+			</tr>
+			<tr>
+				<td><label for="">Last Name:</label></td>
+				<td><input type="text" name="last_name" id="last_name"></td>
+			</tr>
+			<tr>
+				<td><label for="">Email:</label></td>
+				<td><input type="email" name="email" id="email"></td>
+			</tr>
+			<tr>
+				<td><label for="">Password:</label></td>
+				<td><input type="password" name="password" id="password"></td>
+			</tr>
+			<tr>
+				<td><label for="">Confirm Password:</label></td>
+				<td><input type="password" name="password_confirm" id="password_confirm"></td>
+			</tr>
+			<tr>
+				<td>
+					<button>Create Account</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
