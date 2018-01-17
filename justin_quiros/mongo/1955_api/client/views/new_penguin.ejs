@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Quoting Dojo</title>
+<title>Add a Penguin</title>
     <link rel='stylesheet' href='/style.css' />
 	<link rel="stylesheet" href="/bootstrap.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -18,25 +18,27 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="header">
-                    <h1>Welcome to QuotingDojo</h1>
+                    <h1>Add a Penguin</h1>
                 </div> 
             </div>
         </div>
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-12">
-                    <form action="/quote" method="post">
+                    <form action="/penguins" method="post">
                         <table class="table text-center">
                             <tr>
-                                <td><input type="text" name="name" placeholder="Your Name"></td>     
+                                <td><input type="text" name="name" placeholder="Penguin Name"></td>     
                             </tr>
                             <tr>
-                                <td><textarea name="quote" placeholder="Write your quote here!"></textarea></td>    
+                                <td><input type="text" name="best_friend" placeholder="Who's this penguin's best friend?"></td>     
+                            </tr>
+                            <tr>
+                                <td><input type="number" name="age" placeholder="Penguin Age"></td>     
                             </tr>
                         </table>
-                        <button type="submit">Add my quote!</button>
+                        <button type="submit">Add this penguin!</button>
                     </form>
-                        <button><a href="/quotes">Skip to quotes!</a></button>
                 </div>
             </div>
         </div>

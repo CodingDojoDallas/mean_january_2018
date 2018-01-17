@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quoting Dojo</title>
+		<link rel='stylesheet' href='/style.css' />
+		<link rel="stylesheet" href="/bootstrap.min.css">
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-md-12 header">
+						<h1>Here are the awesome quotes!</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+               			<table class="table text-center">
+		                    <tbody>
+	                        <% for(var i in quotes) { %>
+	                        <tr>
+	                            <td>"<%= quotes[i].quote %>"</td>
+	                        </tr>
+	                        <tr>
+	                            <td>- <%= quotes[i].name %> at <%= quotes[i].date %></td>
+	                        </tr>
+	                        <% } %>
+	                    </tbody>
+	                </table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
