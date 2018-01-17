@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Quotes</title>
+</head>
+<body>
+    <h5>Quotes:</h5>
+    <% for (var i in quotes) { %>
+        <p>Name: <%= quotes[i].name %></p>
+        <p>User: <%= quotes[i]._user.first_name %> <%= quotes[i]._user.last_name %></p>
+        <p>Content: <%= quotes[i].content %></p>
+    <% } %>
+</body>
+</html>

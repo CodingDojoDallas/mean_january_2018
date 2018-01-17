@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <h1>Welcome to the index page sucka g!</h1>
+
+    <p>Users:</p>
+    <% for (var x in users) { %>
+        <p><a href="/users/<%= users[x]._id  %>"><%= users[x].first_name %> <%= users[x].last_name %></a></p>
+        <p><%= users[x].email %> | <%= users[x].dob %></p>
+        <hr>
+    <% } %>
+</body>
+</html>

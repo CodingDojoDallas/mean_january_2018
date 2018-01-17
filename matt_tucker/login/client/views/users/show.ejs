@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Show</title>
+</head>
+<body>
+    <h1><%= user.first_name %>'s Page</h1>
+
+    <a href="/sessions?_method=DELETE">Logout</a>
+
+    <form action="/quotes" method="post">
+        <input type="hidden" name="_user" value="<%= user._id %>">
+        Name: <input type="text" name="name" />
+        Content: <textarea name="content"></textarea>
+
+        <button type="submit">Create Quote</button>
+    </form>
+</body>
+</html>
