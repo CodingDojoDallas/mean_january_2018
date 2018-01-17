@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Login | Registration</title>
+    <link rel='stylesheet' href='/style.css' />
+	<link rel="stylesheet" href="/bootstrap.min.css">
+</head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <% if (errors) { %>
+                    <ul>
+                    <% for (var x in errors) { %>
+                        <li><font color="red"><%= errors[x].message %></font></li>
+                    <% } %>
+                    </ul>
+                <% } %>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <h3>Login</h3>
+                    <form action="/login" method="post">
+                        <div class="form-group">
+                            <input type="text" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 text-center">
+                    <h3>Register</h3>
+                    <form action="/users" method="post">
+                        <div class="form-group">
+                            <input type="text" name="first_name" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="last_name" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" placeholder="Email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password_confirmation" placeholder="Confirm Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="birthday">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
