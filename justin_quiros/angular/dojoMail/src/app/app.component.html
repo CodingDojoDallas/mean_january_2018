@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container" style="text-align:center">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>
+              Welcome to {{ title }}!
+            </h1>
+            <table class="table table-striped">
+                <thead>
+                        <tr>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Importance
+                            </th>
+                            <th>
+                                Subject
+                            </th>
+                            <th>
+                                Content
+                            </th>
+                        </tr>  
+                </thead>
+                <tbody>
+                    <tr *ngFor="let x of emailArray">
+                        <td>{{x.address | lowercase}}</td>
+                        <td *ngIf="x.importance">High</td>
+                        <td *ngIf="!x.importance">Low</td>
+                        <td>{{x.subject}}</td>
+                        <td>{{x.content}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
