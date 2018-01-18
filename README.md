@@ -31,6 +31,7 @@ JS Advanced / Node Intro - https://youtu.be/L_0fyuUhrhM <br>
 Express - https://youtu.be/291A_DFacPw <br>
 Mongoose - https://youtu.be/v9M8POVHWdo <br>
 Review/Modularize - https://youtu.be/AcLFf7Gnmic <br>
+Angularrr/Typescript - https://youtu.be/pet1yMOL0IM <br>
 
 ## Demos:
 Login n' Registration - https://youtu.be/4YtbCFlBTdc <br>
