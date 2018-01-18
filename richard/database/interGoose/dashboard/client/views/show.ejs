@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+	<title>show</title>
+</head>
+<body>
+    <h2>BAD KITTY!</h2>
+        <p>Name: <%= kitty.name %></p>
+        <p>Age: <%= kitty.age %></p>
+        <P>Color: <%= kitty.color %></P>
+        <p>ID: <%= kitty._id %></p>
+        <a href="/kitty/edit/<%= kitty._id %>"><button type="button" name="button">Edit Kitty</button></a>
+        <hr>
+        <a href="/"><button type="button" name="button">All Kitties</button> </a>
+</body>
+</html>

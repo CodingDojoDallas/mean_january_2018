@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>Index</title>
+</head>
+    <body>
+        <h2>Kitty!</h2>
+        <hr>
+        <% for (var i in kitty) { %>
+            <p>Name: <%= kitty[i].name %></p>
+            <p>Age: <%= kitty[i].age %></p>
+            <P>Color:  <%= kitty[i].color %></P>
+            <p>ID: <a href="/kitty/<%= kitty[i]._id %>"><%= kitty[i]._id %></a></p>
+            <form action="/kitty/destroy/<%= kitty[i]._id %>" method="post">
+                <input type="submit", value="Kill Kitty">
+            </form>
+            <hr>
+        <% } %>
+        <a href="/kitty/new"><button type="button" name="button">Add Kitty</button></a>
+        
+    </body>
+</html>
+
