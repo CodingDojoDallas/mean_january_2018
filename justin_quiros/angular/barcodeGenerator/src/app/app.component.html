@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container" style="text-align:center">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>
+              Welcome to {{ title }}!
+            </h1>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-md-2 box" *ngFor="let color of colorArray" [ngStyle]="{'background-color': color}">
+        </div>
+    </div>
+</div>
+
