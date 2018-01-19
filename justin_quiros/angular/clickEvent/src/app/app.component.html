@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container" style="text-align:center">
+    <div class="row">
+        <div class="col-md-12">
+           <h1>US Time Zone Display</h1>
+            <button (click)="onButtonClick('PST')" [ngStyle]="{ 'background-color': pstColor }">PST</button>
+            <button (click)="onButtonClick('MST')" [ngStyle]="{ 'background-color': mstColor }">MST</button>
+            <button (click)="onButtonClick('CST')" [ngStyle]="{ 'background-color': cstColor }">CST</button>
+            <button (click)="onButtonClick('EST')" [ngStyle]="{ 'background-color': estColor }">EST</button>
+            <button (click)="onButtonClick('CLEAR')">CLEAR</button>
+            <br>
+            <h2>{{date | date: 'medium' }}</h2>
+        </div>
+    </div>
+</div>
