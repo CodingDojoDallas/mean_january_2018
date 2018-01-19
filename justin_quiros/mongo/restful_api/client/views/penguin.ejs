@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<% for(i in penguin) {%>
+		<title><%= penguin[i].name %></title>
+		<link rel='stylesheet' href='/style.css' />
+		<link rel="stylesheet" href="/bootstrap.min.css">
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-md-12 header">
+						<h1><%= penguin[i].name %></h1>
+						<h4>Age: <%= penguin[i].age %></h4>
+						<h4>Best Friend: <%= penguin[i].best_friend %></h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+               			<table class="table text-center">
+	                	</table>
+	                </div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<% } %>
+</html>

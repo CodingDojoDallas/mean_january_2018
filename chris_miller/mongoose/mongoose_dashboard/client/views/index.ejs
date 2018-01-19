@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+	<h1>Coyotes</h1>
+
+	<a href="/coyotes/new">Create a new coyote</a>
+
+	<% for (coyote in coyotes) { %>
+		<p>Name: <%=coyotes[coyote].name %></p>
+		<p>Color: <%=coyotes[coyote].color %></p>
+<% } %>
+
+</body>
+</html>

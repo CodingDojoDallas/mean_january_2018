@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.min.js">	</script>	
+	<script>
+		// $(document).ready(function(){
+			
+
+		// });
+
+		function getInfo(){
+			$.get("https://api.github.com/users/vrodolfo", displayName)
+			// Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+			function displayName(data) {
+			  console.log(data.login);
+			  document.getElementById("name").innerHTML = data.login;
+			}
+		}
+	</script>
+</head>
+<body>
+	<span id="name"></span>
+	<button onclick="getInfo()">Git</button>
+</body>
+</html>

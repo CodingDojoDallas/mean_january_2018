@@ -1,0 +1,34 @@
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+    function fib() {
+        // Some variables here
+        let first = 0;
+        let second = 1;
+
+        function nacci() {
+            // do something to those variables here
+            let temp = first;
+            first = first + second;
+            second = temp;
+            console.log(first);
+        }
+        return nacci
+    }
+
+    var fibCounter = fib();
+    fibCounter() // should console.log "1"
+    fibCounter() // should console.log "1"
+    fibCounter() // should console.log "2"
+    fibCounter() // should console.log "3"
+    fibCounter() // should console.log "5"
+    fibCounter() // should console.log "8"
+    fibCounter()
+    fibCounter()
+    fibCounter()
+
+</script>
+</html>

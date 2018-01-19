@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+	<title>Results Page</title>
+</head>
+<body>
+	<h4>Submitted Information</h4>
+	<table>
+		<tbody>
+			<tr>
+				<td>Name:</td>
+				<td><%= name %></td>
+			</tr>
+			<tr>
+				<td>Location:</td>
+				<td><%= location %></td>
+			</tr>
+			<tr>
+				<td>Language:</td>
+				<td><%= language %></td>
+			</tr>
+			<tr>
+				<td>Comment:</td>
+				<td><%= comment %></td>
+			</tr>
+		</tbody>
+	</table>
+	<form action='/' method='get'>
+		<input type="submit" value="Go Back">
+	</form>
+</body>
+</html>

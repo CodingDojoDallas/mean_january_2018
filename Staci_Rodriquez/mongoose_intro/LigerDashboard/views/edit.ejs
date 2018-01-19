@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+	<title>Edit Page</title>
+</head>
+<body>
+	<h1>Edit Liger!</h1>
+	<form action='/ligers/<%= liger._id %>' method="POST">
+		<label for="name">Ligers Name: </label><input type="text" name="name" value="<%= liger.name %>"></p>
+		<label for="age">Ligers Age: </label><input type="text" name="age" value="<%= liger.age %>"></p>
+		<label for="color">Ligers Color: </label><input type="text" name="color" value="<%= liger.color %>"></p>
+		<input type="submit" value="Update Liger">
+		<a href="/"><button type="button" name="button">See all Ligers</button></a>
+	</form>
+</body>
+</html>
+
+

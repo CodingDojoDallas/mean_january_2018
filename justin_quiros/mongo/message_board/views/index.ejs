@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Message Board</title>
+    <link rel='stylesheet' href='/style.css' />
+	<link rel="stylesheet" href="/bootstrap.min.css">
+    <script type ="text/javascript">
+    </script>
+</head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Post a message!</h1>
+                    <form action="/post_message" method="post">
+                        <table class="table">
+                            <tr>
+                                <td><input type="text" name="name" placeholder="Name"/></td>
+                            </tr>
+                            <tr>
+                                <td><textarea name="content" placeholder="Message"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><button type="submit">Post Message</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12">
+                <% messages.forEach( (message) =>{ %>
+                    <table class="table">
+                        <tr>
+                            <td><h3>Name: <%= message.name %></h3></td>
+                        </tr>
+                        <tr>
+                            <td><h3>Message: <%= message.content %></h3></td>
+                        </tr>
+
+                        <% message.comments.forEach( (comment) =>{ %>
+                        <tr>
+                            <td><p>Name: <%= comment.name %></p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Comment: <%= comment.content %></p></td>
+                        </tr>
+                        <% }) %>
+                    </table>
+                    <form action="/post_comment/<%=message.id %>" method="post">
+                        <table class="table">
+                            <tr>
+                                <td><input type="text" name="name" placeholder="Name"/></td>
+                            </tr>
+                            <tr>
+                                <td><textarea type="text" name="content" placeholder="Comment"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><button type="submit">Post Comment</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <% }) %>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

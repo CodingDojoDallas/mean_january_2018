@@ -1,0 +1,13 @@
+body{
+	background-color: whitesmoke;
+}
+.low{
+	background-color: red;
+	width: 400px;
+	height: 400px;
+}
+.win{
+	background-color: green;
+	width: 400px;
+	height: 400px;
+}
