@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="DojoQuery.js"></script>
+</head>
+<body> 
+    <h1 id="intro">What Up Gangster.</h1>
+    <script>
+        $Dojo('intro').click(function () {alert('hello')})
+
+        $Dojo('intro').hover(
+            function() { console.log('Moving In')},
+            function() { console.log('Moving Out')}
+        )
+    </script>
+</body>
+</html>

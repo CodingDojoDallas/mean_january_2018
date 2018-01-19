@@ -1,0 +1,55 @@
+<html>
+	<head>
+              <link rel='stylesheet' href='/stylesheets/style.css' />
+              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+              <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+              <script type ="text/javascript">
+              $(document). ready(function (){
+               // triggers the connection event in our server!
+           var socket = io.connect();
+           // submit data to the server using emit
+           $('#survey_form').submit(function(e) {
+                   e.preventDefault();
+                   socket.emit("posting_form", {
+                   name: $('#name').val(),
+                   location: $('#location').val(),
+                   language: $('#language').val(),
+                   comment: $('#comment').val()
+               });
+     });
+         //display the emit response of the server called "updated_message" and "random_number"
+     socket.on('updated_message', function (data){
+         $('#message').html("You emitted the following information to the server: " + JSON.stringify(data.response));
+     });
+     socket.on('random_number', function (data){
+        $('#number').html("Your lucky number emitted by the server is : " + JSON.stringify(data.response));
+     });
+       });
+              </script>
+	</head>
+    <body>
+       <div id="wrapper">
+       <div id="message"></div>
+       <div id="number"></div>
+       	<form id="survey_form">
+       		<p>Your Name: <input name="name" type="text"></p>
+       		<p>Dojo Location: 
+       			<select name="location">
+       			<option value="London">London</option>
+       			<option value="France">France</option>
+       			<option value="Germany">Germany</option>
+       			<option value="Spain">Spain</option>
+       			</select></p>
+       		<p>Favorite Language: 
+       			<select name="language">
+       			<option value="Python">Python</option>
+       			<option value="Ruby">Ruby on Rails</option>
+       			<option value="MEAN">MEAN</option>
+       			<option value="HTML">HTML</option>
+       			</select></p>
+       		<p>Comment: <input type="text" placeholder="optional"></p>
+       		<input type="submit" value="Submit">
+       	</form>
+       </div>
+	</body>
+</html>
