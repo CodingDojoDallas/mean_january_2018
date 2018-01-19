@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quoting Dojo</title>
+</head>
+<body>
+  <h1>Quotes Just for You.</h1>
+    <div class="quotes_container">
+      <% for (var i = quotes.length-1; i>=0; i--) { %>
+          <h2>"<%= quotes[i].quote %> "</h2>
+          <h5> --- <%= quotes[i].name %> at <%= quotes[i].createdAt %> </h5>
+      <% } %>
+      <a href="/">Go home</a>
+    </div>
+</body>
+</html>
