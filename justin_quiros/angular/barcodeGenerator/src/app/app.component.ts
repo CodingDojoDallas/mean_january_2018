@@ -12,19 +12,21 @@ export class AppComponent implements OnInIt {
   			'DarkGoldenRod', 'DarkTurquoise', 'AliceBlue', 
   			'BlueViolet', 'DarkGreen', 'DarkRed', 'DimGrey',
   			'GreenYellow', 'LightPink', 'MediumPurple', 'Navy', 
-  			'Olive', 'PeachPuff', 'Violet']
-
+  			'Olive', 'PeachPuff', 'Violet', 'Salmon']
+  
   colorArray = []
 
+
   randomColor(){
-  	for(let i = 0; i < this.colors.length; i++){
+    this.colorArray = []
+  	for(let i = 0; i < 60; i++){
   		var rand = (Math.floor(Math.random() * this.colors.length));
   		this.colorArray.push(this.colors[rand]);
-  	}
+    }
   }
-
 
   ngOnInit() {
   	this.randomColor();
   }
+
 }
