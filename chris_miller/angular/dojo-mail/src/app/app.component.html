@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}!
+  </h1>
+
+</div>
+
+<div [ngClass] ="{
+'align-left': true}">
+  <table>
+    <thead [ngClass] = "{
+    'margin-left': true}">
+      <th>Email</th>
+      <th>Importance</th>
+      <th>Subject</th>
+      <th>Content</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let em of emails">
+      <td>{{em.email}}</td>
+      <td *ngIf= 'em.importance'>High</td>
+      <td *ngIf= '!em.importance'>Low</td>
+      <td>{{em.subject}}</td>
+      <td>{{em.content}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div> <!-- end main -->
+
+
