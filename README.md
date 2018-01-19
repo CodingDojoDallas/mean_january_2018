@@ -33,6 +33,7 @@ Mongoose - https://youtu.be/v9M8POVHWdo <br>
 Review/Modularize - https://youtu.be/AcLFf7Gnmic <br>
 Angularrr/Typescript - https://youtu.be/pet1yMOL0IM <br>
 Basic Angular - https://youtu.be/LKHHDCvG6-k <br>
+Nested Components (Input/Output) - https://youtu.be/A8G8DCYBgBc <br>
 
 ## Demos:
 Login n' Registration - https://youtu.be/4YtbCFlBTdc <br>
