@@ -1,0 +1,210 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>
+                {{ title }}
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12" *ngIf="submitted">Thank you for registering with us {{ users[users.length-1].first_name }}. We just sent you a confirmation email at <a href="">{{ users[users.length-1].email | json }}</a>, and we will send all mail to {{ users[users.length-1].address }}, {{ users[users.length-1].city }} {{ users[users.length-1].state }}.
+              <br>
+              Have a wonderful day!
+            </div>
+        </div>
+        <div class="row">
+            <div class="reg col-md-12">
+              <h3>Account Information</h3>
+                <form class="form-group" (submit)="onSubmit()" #regform="ngForm">
+                    <table>
+                        <tr>
+                            <td><input
+                                  class="form-control" 
+                                  type="text" 
+                                  name="first_name"
+                                  required 
+                                  minlength="3" 
+                                  maxlength="24" 
+                                  [(ngModel)]="user.first_name"
+                                  #first_name="ngModel"
+                                  placeholder="First Name" >
+                                  </td>
+                                  <td *ngIf="first_name.errors"><font color="red"> - First Name is required.</font></td>
+                        </tr>
+                        <tr>
+                            <td><input 
+                                  class="form-control" 
+                                  type="text" 
+                                  name="last_name"
+                                  required 
+                                  minlength="2" 
+                                  maxlength="24" 
+                                  [(ngModel)]="user.last_name" 
+                                  #last_name="ngModel"
+                                  placeholder="Last Name"  ></td>
+                                  <td *ngIf="last_name.errors"><font color="red"> - Last Name is required.</font></td>
+                        </tr>
+                        <tr>
+                            <td><input 
+                                  type="text" 
+                                  class="form-control" 
+                                  name="email"
+                                  required 
+                                  minlength="2" 
+                                  maxlength="24" 
+                                  [(ngModel)]="user.email" 
+                                  #email="ngModel"
+                                  placeholder="Email"  ></td>
+                                  <td *ngIf="email.errors"><font color="red"> - Email must be valid.</font></td>
+                        </tr>
+                        <tr>
+                            <td><input 
+                                  type="password" 
+                                  class="form-control" 
+                                  name="password"
+                                  required 
+                                  minlength="8" 
+                                  maxlength="24" 
+                                  pattern="^([a-zA-Z0-9@*#]{8,15})$"
+                                  [(ngModel)]="user.password" 
+                                  #password="ngModel"
+                                  placeholder="Password"  ></td>
+                                  <td *ngIf="password.errors"><font color="red"> - Password must be atleast 8 characters.</font></td>
+
+                                  <!-- Password123 -->
+
+
+                        </tr>
+                        <tr>
+                            <td><input 
+                                  type="password" 
+                                  class="form-control" 
+                                  name="password_confirmation"
+                                  required 
+                                  minlength="8" 
+                                  maxlength="24" 
+                                  pattern="^([a-zA-Z0-9@*#]{8,15})$"
+                                  [(ngModel)]="user.password_confirmation" 
+                                  #password_confirmation="ngModel"
+                                  placeholder="Password Confirmation"  ></td>
+                                  <td *ngIf="(password_valid() || password_confirmation.errors)"><font color="red"> - Password Confirmation must match password.</font></td>
+
+                        </tr>
+                        <tr>
+                            <td><input 
+                                  type="text" 
+                                  class="form-control" 
+                                  name="address"
+                                  required 
+                                  minlength="10" 
+                                  maxlength="50" 
+                                  [(ngModel)]="user.address" 
+                                  #address="ngModel"
+                                  placeholder="Street Address"  ></td>
+                                  <td *ngIf="address.errors"><font color="red"> - Address is required.</font></td>
+
+                        </tr>
+                        <tr>
+                            <td><input 
+                                  type="text" 
+                                  class="form-control" 
+                                  name="unit_num" 
+                                  maxlength="20" 
+                                  [(ngModel)]="user.unit_num" 
+                                  #unit_num="ngModel"
+                                  placeholder="Unit/Apt #"  ></td>
+                        </tr>
+                        <tr>
+                            <td><input 
+                                  type="text" 
+                                  class="form-control" 
+                                  name="city"
+                                  required
+                                  minlength="2" 
+                                  maxlength="25" 
+                                  [(ngModel)]="user.city" 
+                                  #city="ngModel"
+                                  placeholder="City"  ></td>
+                                  <td *ngIf="city.errors"><font color="red"> - City is required.</font></td>
+
+                        </tr>
+                        <tr>
+                            <td><h5>State:</h5> 
+                                <select 
+                                    name="state" 
+                                    class="form-control" 
+                                    required
+                                    minlength="2"  
+                                    [(ngModel)]="user.state" 
+                                    #state="ngModel"
+                                    >
+                                    <option value="AL">AL</option>
+                                    <option value="AK">AK</option>
+                                    <option value="AZ">AZ</option>
+                                    <option value="AR">AR</option>
+                                    <option value="CA">CA</option>
+                                    <option value="CO">CO</option>
+                                    <option value="CT">CT</option>
+                                    <option value="DE">DE</option>
+                                    <option value="DC">DC</option>
+                                    <option value="FL">FL</option>
+                                    <option value="GA">GA</option>
+                                    <option value="HI">HI</option>
+                                    <option value="ID">ID</option>
+                                    <option value="IL">IL</option>
+                                    <option value="IN">IN</option>
+                                    <option value="IA">IA</option>
+                                    <option value="KS">KS</option>
+                                    <option value="KY">KY</option>
+                                    <option value="LA">LA</option>
+                                    <option value="ME">ME</option>
+                                    <option value="MD">MD</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MI">MI</option>
+                                    <option value="MN">MN</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MO">MO</option>
+                                    <option value="MT">MT</option>
+                                    <option value="NE">NE</option>
+                                    <option value="NV">NV</option>
+                                    <option value="NH">NH</option>
+                                    <option value="NJ">NJ</option>
+                                    <option value="NM">NM</option>
+                                    <option value="NY">NY</option>
+                                    <option value="NC">NC</option>
+                                    <option value="ND">ND</option>
+                                    <option value="OH">OH</option>
+                                    <option value="OK">OK</option>
+                                    <option value="OR">OR</option>
+                                    <option value="PA">PA</option>
+                                    <option value="RI">RI</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SD">SD</option>
+                                    <option value="TN">TN</option>
+                                    <option value="TX">TX</option>
+                                    <option value="UT">UT</option>
+                                    <option value="VT">VT</option>
+                                    <option value="VA">VA</option>
+                                    <option value="WA">WA</option>
+                                    <option value="WV">WV</option>
+                                    <option value="WI">WI</option>
+                                    <option value="WY">WY</option>
+                                </select>
+                            </td>
+                            <td *ngIf="state.errors"><font color="red"> - State is required.</font></td>
+
+                        </tr>
+                        <tr>
+                          I'm feeling lucky: 
+                          <input type="radio" name="lucky" value="true" [(ngModel)]="user.luck" required #booControl="ngModel">Yes
+                          <input type="radio" name="lucky" value="false" [(ngModel)]="user.luck" required>No
+                          <td *ngIf="booControl.errors"><font color="red"> - Choosing how you feel is required.</font></td>
+                        </tr>
+                        <br>
+                            <input type="submit" value="Register" [disabled]="!regform.valid">
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div> 
+</div>
