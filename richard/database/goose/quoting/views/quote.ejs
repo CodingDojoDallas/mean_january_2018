@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+    <h4>Here are the awesome quotes!</h4>
+    
+	<% for (var i in quote) { %>
+        <p>Quote: <%= quote[i].quote %></p>
+        <p>Name: <%= quote[i].name %> at <%= quote[i}.createdAt %></p> 
+        <hr>
+	<% } %>
+</body>
+</html>

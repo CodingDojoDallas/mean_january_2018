@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+
+    <table>
+    <thead>
+      <tr>
+       <th>email</th>
+       <th>importance</th>
+       <th>subject</th>
+       <th>content</th>
+     </tr>
+    </thead>
+    <tbody *ngFor="let info of information">
+      <tr>
+        <td>{{ info.email | lowercase }}</td>
+        <td *ngIf='info.importance'>high</td>
+        <td *ngIf='!info.importance'>low</td>
+        <td>{{ info.subject }}</td>
+        <td>{{ info.content }}</td>
+      </tr>
+      <h6>{{ info | json }}</h6>
+    </tbody>
+
+
+  </table>
+</div>

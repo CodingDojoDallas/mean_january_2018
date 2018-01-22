@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Time Zone Selector</title>
+</head>
+
+<body>
+  <h3>US Time Zones</h3>
+  <button (click)="zone('PST')" [ngClass]="{current: timezone == 'PST'}">pt</button>
+  <button (click)="zone('MST')" [ngClass]="{current: timezone == 'MST'}">mt</button>
+  <button (click)="zone('CST')" [ngClass]="{current: timezone == 'CST'}">ct</button>
+  <button (click)="zone('EST')" [ngClass]="{current: timezone == 'EST'}">et</button>
+  <h3>{{time | date:'EEE. MMM d, y h:mm:ss a'}}</h3>
+</body>
+
+</html>
