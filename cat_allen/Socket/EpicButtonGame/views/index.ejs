@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Great Number Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script type ="text/javascript">
+       $(document).ready(function (){
+         var socket = io.connect("http://localhost:8000");
+            $("button").on("click", function(e) {
+                e.preventDefault();
+                // When button element clicked
+                // sends  a "client_count" emit
+                // from index.ejs to server.js
+                socket.emit("client_count", {action: "Button clicked"})
+            });
+            // Listens for the "server_counter"
+            // emit coming from server.js
+            // before taking an action
+            socket.on("server_counter", function(action) {
+                // the "action.response" value
+                // is passed from the "server_counter"
+                // emit from server.js and this value
+                // is assigned to "counter" on server.js
+                // which starts at 0 and increments
+                // by 1, all on server.js
+                $("#count").html(action.response);
+            });
+        });
+         </script>
+  </head>
+  <body>
+    <h2>The button has been pushed <span id="count"></span> times!</h2>
+    <h4>Push the button to update the count.</h4>
+    <button type="button">Push the Epic Button</button>
+  </body>
+</html>

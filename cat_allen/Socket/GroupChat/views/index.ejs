@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group Chat</title>
+
+    <link rel="stylesheet" type="text/css" href="./styles.css"/>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+    <script type="text/javascript">
+        var socket = io.connect();
+        var name = prompt("Enter your name to join the conversation:");
+        if(name != "") {
+            socket.emit("new_user_from_client", {name: name});
+        }
+        $(function() {
+            socket.on("client_name", function(data) {
+                var clientName = data.name;
+                $("#client-name").html("Hello, " + clientName);
+            });
+            $("#send-message").on("click", function() {
+                var messageText = $("#message-form").find("input").val();
+                socket.emit("message_text", {message: messageText});
+                socket.on("server_message_text", function(data) {
+                    $("#message-board").prepend("<p>" + data.user_message + "</p>");
+                });
+                return false;
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div id="wrapper">
+    <h1>Group Chat</h1>
+    <div id="message-board"></div>
+    <p id="client-name"></p>
+    <form id="message-form" action="send_message" method="post">
+        <input type="text" placeholder="enter your message here" name="message"/>
+    </form>
+    <p id="send-message"><button>Send</button></p>
+</div>
+</body>
+</html>

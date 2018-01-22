@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <style type="text/css">
+		/* border and styling for table data */
+		td{
+			border: 1px solid silver;
+			text-align: center;
+			width: 40px;
+			height: 40px;
+		}
+		/* background and bolding for the first element of our rows and data */
+		td:first-child, tr:first-child{
+			background-color: silver;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="target"></div>
+</body>
+<script type="text/javascript">
+	function draw_table(){
+        let html_string = "<table>";
+        var result = '\n';
+		for(let i = 0; i<13; i++){
+            html_string += "<tr>";
+			for(let j = 0; j<13; j++){
+				let nums = i * j;
+                let data = "<td>" + nums + "</td>";
+                if(i === 0{
+                    data = "<td>" + (j+1) + "</td>"
+                }
+                else{
+                    data = "<td>" + i * (j+1) + "</td>"
+                }
+                html_string += data;
+                }
+            html_string += "</tr>";
+        }
+        result += '\n'
+		html_string += "</table>";
+		document.getElementById("target").innerHTML = html_string;
+    }
+	draw_table();
+</script>
+</html>

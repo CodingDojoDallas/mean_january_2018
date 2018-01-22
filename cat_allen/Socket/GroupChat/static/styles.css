@@ -1,0 +1,33 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+    width: 920px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#message-board {
+    width: 920px;
+    height: 300px;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+#message-board p {
+    padding: 0 20px;
+}
+
+#message-form input[type=text] {
+    width: 910px;
+    padding: 5px;
+    margin: 20px 0;
+}
+
+#send-message {
+    float: right;
+    font-size: 30px;
+}
