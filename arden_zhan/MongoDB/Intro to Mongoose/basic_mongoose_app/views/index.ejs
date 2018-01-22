@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Mongoose App - Users</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <form action="/users" method="post">
+        <p>Name: <input type="text" name="name"></p>
+        <p>Age: <input type="number" name="age"></p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <% for (var user in users){ %>
+            <tr>
+                <td><%= users[user].name %></td>
+                <td><%= users[user].age %></td>
+            </tr>
+        <% } %>
+    </table>
+
+</body>
+</html>

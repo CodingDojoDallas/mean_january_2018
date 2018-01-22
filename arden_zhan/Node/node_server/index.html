@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Game of Thrones Houses</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="houses">
+        <table>
+            <tr>
+                <td><img src="static/baratheon.png" alt="baratheon"></td>
+                <td><img src="static/lannister.jpg" alt="lannister"></td>
+                <td><img src="static/stark.jpg" alt="stark"></td>
+                <td><img src="static/targaryen.jpg" alt="targaryen"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="description">
+
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        var descBox = document.getElementsByClassName("description")[0];
+
+        $('img').click(function(){
+            let house = ($(this).attr('alt'));
+            switch(house){
+                case "baratheon":
+                $.get("https://www.anapioficeandfire.com/api/houses/16", displayInfo);
+                break;
+
+                case "lannister":
+                $.get("https://www.anapioficeandfire.com/api/houses/229", displayInfo);
+                break;
+
+                case "stark":
+                $.get("https://www.anapioficeandfire.com/api/houses/362", displayInfo);
+                break;
+
+                case "targaryen":
+                $.get("https://www.anapioficeandfire.com/api/houses/378", displayInfo);
+                break;
+
+                default: return undefined;
+            }
+            
+            function displayInfo(data){
+                document.getElementsByClassName("description")[0].innerHTML = 
+                "<p>Name: " + data.name + "</p>" +
+                "<p>Words: " + data.words + "</p>" +
+                "<p>Titles: " + data.titles + "</p>"
+
+            }
+        })
+    });
+</script>
+</html>
