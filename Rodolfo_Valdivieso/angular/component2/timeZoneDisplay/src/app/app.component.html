@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    US Time ZOne Display!
+  </h1>
+ 
+ <button (click)='displayTimePST()' [ngStyle]="{'background-color': pstColor}">PST</button>
+ <button (click)='displayTimeMST()' [ngStyle]="{'background-color': mstColor}">MST</button>
+ <button (click)='displayTimeCST()' [ngStyle]="{'background-color': cstColor}">CST</button>
+ <button (click)='displayTimeEST()' [ngStyle]="{'background-color': estColor}">EST</button>
+ <button (click)='clear()' [ngStyle]="{'background-color': 'gray'}">Clear</button>
+ <h1>{{time|date:'medium'}}</h1>
+</div>
+
+

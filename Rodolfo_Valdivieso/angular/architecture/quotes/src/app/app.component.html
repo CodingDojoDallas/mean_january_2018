@@ -1,0 +1,66 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Add a Quote!
+  </h1>
+  <form (submit)="onSubmit()">
+    <table>
+      <tr>
+        <td colspan="2"><textarea name="content" 
+                      id="content" cols="30" rows="10"
+                      required 
+                      minlength="4" 
+                      maxlength="100"
+                      [(ngModel)]="quote.content"
+                      #content="ngModel"
+
+          >
+        </textarea>
+       
+
+      </td>
+      <td> <div *ngIf="content.invalid && (content.dirty || content.touched)"
+     class="alert">
+          <div *ngIf="content.errors">
+            Content is required, minimum lenght is 4 character long.
+          </div>
+        </div></td>
+      </tr>
+      <tr>
+        <td>Author:</td>
+        <td>
+          <input 
+          type="text" 
+          name="author"
+          required 
+          minlength="1" 
+          maxlength="100"
+          [(ngModel)]="quote.author"
+          #author="ngModel"
+        >
+        
+
+        </td>
+        <td><div *ngIf="author.invalid && (author.dirty || author.touched)"
+     class="alert">
+          <div *ngIf="author.errors">
+            Author is required, minimum lenght is 1 character long.
+          </div>
+        </div></td>
+      </tr>
+      <tr>
+        <input *ngIf="content.errors || author.errors" disabled="disabled" type="submit" value="Add Quote">
+
+        <input *ngIf="content.valid && author.valid" type="submit" value="Add Quote">
+      </tr>
+    </table>
+
+  </form>
+  
+  <h1>Quotes List</h1>
+  <app-quotes *ngFor="let q of quotes" [quote]='q'  (AddLikes)="AddLikes($event)" (SubstractLikes)="SubstractLikes($event)"  (Delete)="Delete($event)"></app-quotes>
+
+</div>
+
+
+

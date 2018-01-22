@@ -1,0 +1,20 @@
+.ng-invalid {  }
+.ng-valid { }
+.ng-untouched {  }
+.ng-touched { }
+.ng-dirty { }
+.ng-pristine { }
+
+input.ng-dirty.ng-invalid {
+  color: red
+}
+
+.alert{
+	color: red;
+	display: inline-block;
+}
+
+.welcome{
+	color: green;
+	border: 1px solid black;
+}

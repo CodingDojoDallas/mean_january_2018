@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="body">
+
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+  </div>
+  <h2>Retro Barcode </h2>
+
+  <div class="square" *ngFor="let color of arr; let idx = index" [ngStyle]="{'background-color': color}"
+  ></div>
+</div>
+
+
+
+

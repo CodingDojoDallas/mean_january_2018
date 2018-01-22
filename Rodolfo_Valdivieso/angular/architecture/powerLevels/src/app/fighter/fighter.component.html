@@ -1,0 +1,9 @@
+<div class="fighter">
+  <h4>Name: {{fighter.name}}</h4>
+  <h4>Power Level: {{fighter.power * fighter.powerFactor}}</h4>
+	<h4 *ngIf='((fighter.power * fighter.powerFactor) > 900) && ((fighter.power * fighter.powerFactor) < 2000)'>Over 900</h4>
+
+	<h4 *ngIf='((fighter.power * fighter.powerFactor) >= 2000) && ((fighter.power * fighter.powerFactor) < 5000)'>Superlative!</h4>
+
+	<h4 *ngIf='(fighter.power * fighter.powerFactor) >= 5000'>The One</h4>
+</div>
