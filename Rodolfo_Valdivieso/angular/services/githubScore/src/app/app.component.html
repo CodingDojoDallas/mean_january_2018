@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="title" style="text-align:center">
+  <h1>GitHub Score</h1>
+</div>
+
+<div style="text-align:center">
+  
+  <label for="">Github Username: </label>
+  <input type="text" 
+         name="username" 
+         id="username" 
+         required
+         minlength="4" 
+         [(ngModel)]="user.username"
+         #username="ngModel"
+        >
+        <div *ngIf="username.invalid && (username.dirty || username.touched)"
+     class="alert">
+          <div *ngIf="username.errors">
+            Username is required.
+          </div>
+        </div>
+  <button *ngIf="username.valid" (click)="calculateScore()" >Calculate Score</button>
+  <button *ngIf="username.invalid" disabled="disabled" >Calculate Score</button>
+</div>
+
+<div>
+  <h1>Your Score:{{user.score}}</h1>
+  <h1  [ngStyle]="{'color': user.color}" >{{user.message}}</h1>
+</div>
+

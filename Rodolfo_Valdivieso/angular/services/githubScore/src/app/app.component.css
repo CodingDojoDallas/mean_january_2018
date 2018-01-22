@@ -1,0 +1,16 @@
+.alert{
+	color: red;
+	display: inline-block;
+}
+
+div{
+	display: inline-block;
+}
+
+.message{
+	color:green;
+}
+
+.title{
+	display: block;
+}
