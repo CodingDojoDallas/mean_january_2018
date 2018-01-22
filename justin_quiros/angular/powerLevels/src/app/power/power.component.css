@@ -1,0 +1,10 @@
+.power {
+	border: solid 1px;
+}
+
+.box {
+	width: 30%;
+	height: 100px;
+	border: solid 1px;
+	background-color: lightgrey;
+}

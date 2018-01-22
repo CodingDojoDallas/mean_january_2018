@@ -1,0 +1,20 @@
+.box {
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+	border: solid 1px;
+	padding-top: 40px;
+	background-color: lightgrey;
+}
+
+.off {
+	background-color: red;
+}
+
+.on {
+	background-color: green;
+}
+
+.button	{
+	display: inline-block;
+}

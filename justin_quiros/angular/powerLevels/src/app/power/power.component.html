@@ -1,0 +1,42 @@
+<div class="container power">
+	<div class="main">
+		<div class="row">
+			<div class="cold-md-12">				
+				<form>
+					<h1>Initial Power Level</h1>
+					<input
+						type="number"
+						min="1"
+						max="100"
+						name="current"
+						[(ngModel)]="power.current"
+						#current_power="ngModel"
+						>
+					<input type="submit" value="Calculate Powers">
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 box text-center">
+				<app-human [power]="power"></app-human>
+			</div>
+			<div class="col-md-4 box text-center">
+				<app-saiyan [power]="power"></app-saiyan>
+			</div>
+			<div class="col-md-4 box text-center">
+				<app-supersaiyan [power]="power"></app-supersaiyan>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 box text-center">
+				<app-supersaiyantwo [power]="power"></app-supersaiyantwo>
+			</div>
+			<div class="col-md-4 box text-center">
+				<app-supersaiyanthree [power]="power"></app-supersaiyanthree>
+			</div>
+			<div class="col-md-4 box text-center">
+				<app-supersaiyanfour [power]="power"></app-supersaiyanfour>
+			</div>
+		</div>
+	</div>
+</div>

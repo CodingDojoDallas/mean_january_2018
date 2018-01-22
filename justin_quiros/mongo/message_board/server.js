@@ -14,16 +14,16 @@ mongoose.connect('mongodb://localhost/message_board')//Need to change to connect
 
 var Schema = mongoose.Schema;
 var MessageSchema = new mongoose.Schema({
- name: {type: String, required: true, minlength: 4},
- content: {type: String, required: true, minlength: 4},
- comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}]
- },{usePushEach: true}, {timestamps: true}); 
+  name: {type: String, required: true, minlength: 4},
+  content: {type: String, required: true, minlength: 4},
+  comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}]
+  },{usePushEach: true}, {timestamps: true}); 
 
 var CommentSchema = new mongoose.Schema({
- _message: {type: Schema.Types.ObjectId, ref: 'Message'},
- name: {type: String, required: true, minlength: 4},
- content: {type: String, required: true}
- }, {timestamps: true}); 
+  _message: {type: Schema.Types.ObjectId, ref: 'Message'},
+  name: {type: String, required: true, minlength: 4},
+  content: {type: String, required: true}
+  }, {timestamps: true}); 
 
 mongoose.model('Message', MessageSchema); // We are setting this Schema in our Models as 'Message'
 mongoose.model('Comment', CommentSchema); // We are setting this Schema in our Models as 'Comment'
@@ -82,15 +82,15 @@ app.post('/post_message', function(req, res) {
 // route for creating one comment with the parent post id
 app.post('/post_comment/:id', function (req, res){
   Message.findOne({_id: req.params.id}, function(err, message){
-         var comment = new Comment({name: req.body.name, content: req.body.content});
-         comment._message = message._id;
-         message.comments.push(comment);
-         comment.save(function(err){
-                 message.save(function(err){
-                       if(err) { console.log(err); } 
-                       else { res.redirect('/'); }
-                 });
-         });
+     var comment = new Comment({name: req.body.name, content: req.body.content});
+     comment._message = message._id;
+     message.comments.push(comment);
+     comment.save(function(err){
+         message.save(function(err){
+               if(err) { console.log(err); } 
+               else { res.redirect('/'); }
+             });
+     });
    });
  });
 

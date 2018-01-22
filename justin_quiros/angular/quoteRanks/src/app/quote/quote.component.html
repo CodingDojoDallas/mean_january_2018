@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<h2>Add a Quote</h2>
+			<form class="form-group" (submit)="onSubmit()" #quoteform="ngForm">
+				<textarea
+					class="form-control"
+					name="content"
+					required
+					minlength="4"
+					[(ngModel)]="quote.content"
+					#content="ngModel"
+					placeholder="Place quote here"
+					>						
+				</textarea>
+				<input
+					type="text"
+					name="author"
+					required
+					minlength="1"
+					[(ngModel)]="quote.author"
+					#author="ngModel"
+					placeholder="Author Name"
+					>
+					<br>
+				<input type="submit" value="Add Quote" [disabled]="!quoteform.valid">
+			</form>
+		</div>
+		<div class="col-md-4">
+			<br>
+			<br>
+			<br>
+			<p *ngIf="content.errors"><font color="red">Quote must be present and be atleast 4 characters long</font></p>
+			<br>
+			<p *ngIf="author.errors"><font color="red">Author must be present and be atleast 1 character long</font></p>
+		</div>
+	</div>
+</div>
+
+<app-quote-list [quotes]="quotes"></app-quote-list>
