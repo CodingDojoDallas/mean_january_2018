@@ -1,0 +1,56 @@
+div{
+	border:2px solid blue;
+	
+	display: block;
+	margin: 10px 10px 10px 10px;
+	background-color: gray;
+	color: white; 
+}
+
+p{
+	width: 300px;
+	font-size: 15px;
+	display: inline-block;
+}
+span{
+	display: inline-block;
+}
+
+h1{
+	display: inline-block;
+	width: 50px;
+
+}
+.buttons{
+	display: inline-block;
+	width: 200px;
+	border: none;
+}
+
+.up{
+	background-color: green;
+	display: block;
+	color: white;
+	width: 100px;
+	cursor: pointer;
+}
+
+.down{
+	background-color: red;
+	display: block;
+	color: white;
+	width: 100px;
+	cursor: pointer;
+}
+
+.delete{
+	background-color: brown;
+	display: block;
+	color: white;
+	width: 100px;
+	cursor: pointer;
+}
+
+.up:hover{
+	cursor: pointer;
+}

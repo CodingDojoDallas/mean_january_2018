@@ -1,0 +1,15 @@
+
+
+<div>
+	<p>"{{quote.content}}" 
+		<span>- {{quote.author}}.</span>
+	</p>
+	
+
+	<h1>+{{quote.likes}}</h1>
+	<div class="buttons">
+		<button (click)='triggerEvent($event)' class="up">Vote Up</button>
+		<button (click)='triggerEvent2($event)' class="down">Vote Down</button>
+		<button (click)='triggerEvent3($event)' class="delete">Delete</button>
+	</div>
+</div>
