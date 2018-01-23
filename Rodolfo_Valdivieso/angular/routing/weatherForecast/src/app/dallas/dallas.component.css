@@ -1,0 +1,12 @@
+img{
+	width: 400px;
+	height: 300px;
+	display: inline-block;
+
+}
+
+.div{
+	display: inline-block;
+	margin: 20px 20px 20px 20px;
+	vertical-align: top;
+}
