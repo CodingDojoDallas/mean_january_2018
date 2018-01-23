@@ -34,8 +34,8 @@ Review/Modularize - https://youtu.be/AcLFf7Gnmic <br>
 Angularrr/Typescript - https://youtu.be/pet1yMOL0IM <br>
 Basic Angular - https://youtu.be/LKHHDCvG6-k <br>
 Nested Components (Input/Output) - https://youtu.be/A8G8DCYBgBc <br>
-Services - https://youtu.be/GOAbZ4Y_TSs <br>
-Routers/Observables - https://youtu.be/d0zt4XwlIlk <br>
+Services - https://youtu.be/LEOdAd5Ficc <br>
+Routers/Observables - https://youtu.be/T2-86FVnVmI <br>
 
 ## Demos:
 Login n' Registration - https://youtu.be/4YtbCFlBTdc <br>
