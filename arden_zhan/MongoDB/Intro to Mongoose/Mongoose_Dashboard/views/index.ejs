@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mongoose Dashboard - Bears</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+    <% if(typeof(errors) != 'undefined' ) { %>
+        <% for (var x in errors) { %>
+            <h3><%= errors[x].message %></h3>
+        <% } %>
+    <% } %>
+
+    <h1>Bears</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <% for (var bear in bears){ %>
+            <tr>
+                <td><a href="/bears/<%= bears[bear]._id %>"><%= bears[bear].name %></a></td>
+                <td><%= bears[bear].age %></td>
+            </tr>
+        <% } %>
+    </table>
+
+    <p><button><a href="/bears/new">New Bear</a></button></p>
+</body>
+</html>
