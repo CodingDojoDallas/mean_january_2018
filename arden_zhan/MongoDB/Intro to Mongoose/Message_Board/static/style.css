@@ -1,0 +1,24 @@
+*{
+	margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+body{
+    padding: 1em;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+input{
+    padding: 0.5em;
+}
+
+.comments {
+    margin-left: 200px;
+}
+
+form {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
