@@ -1,0 +1,15 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.row{
+    display:block;
+}
+.row *{
+    display:inline-block;
+    border: 1px black solid;
+    height:150px;
+    width:300px;
+    margin-right:10px;
+    margin-top:10px;
+}

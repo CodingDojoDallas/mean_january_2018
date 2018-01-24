@@ -1,0 +1,9 @@
+div#main {
+    display: inline-block;
+    background-color: green;
+    border: 1px solid black;
+    padding: 1.5em;
+    width: 70.5%;
+    height: 450px;
+    vertical-align: top;
+}
