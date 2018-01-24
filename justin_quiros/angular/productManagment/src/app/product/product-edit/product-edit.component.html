@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 text-center">
+			<h1>Edit Product</h1>
+			<br>
+			<form class="form-group" (submit)="onSubmit()" #editform="ngForm">
+				<table class="table">
+					<tr>
+						<td>Title </td>
+						<td><input class="form-control" 
+                                  type="text" 
+                                  name="title"
+                                  required 
+                                  minlength="3" 
+                                  maxlength="24"
+                                  value="product.title" 
+                                  [(ngModel)]="product.title"
+                                  #title="ngModel"></td>
+					</tr>
+					<tr>
+						<td>Price </td>
+						<td><input class="form-control" 
+                                  type="number" 
+                                  name="price"
+                                  required
+                                  value="product.price" 
+                                  [(ngModel)]="product.price"
+                                  #price="ngModel"></td>
+					</tr>
+					<tr>
+						<td>Image Url </td>
+						<td><input class="form-control" 
+                                  type="text" 
+                                  name="url"
+                                  minlength="3" 
+                                  maxlength="24" 
+                                  value="product.url" 
+                                  [(ngModel)]="product.url"
+                                  #url="ngModel"></td>
+					</tr>
+				</table>
+				<button type="submit" [disabled]="!editform.valid">Update</button>
+				<button (click)="deleteProd()">Delete</button>
+			</form>
+		</div>
+	</div>
+</div>
