@@ -38,7 +38,7 @@ Services - https://youtu.be/LEOdAd5Ficc <br>
 Routers/Observables - https://youtu.be/T2-86FVnVmI <br>
 Debauchery - https://youtu.be/xYxIG3SdZjA <br>
 Full Mean + AnonPosts - https://youtu.be/UFhhqaQwuOM <br>
-AnonPosts Finish - https://youtu.be/yhgqTjBj0CE <br>
+AnonPosts Finish - https://youtu.be/J1oSQre5m3c <br>
 
 ## Demos:
 Login n' Registration - https://youtu.be/4YtbCFlBTdc <br>
