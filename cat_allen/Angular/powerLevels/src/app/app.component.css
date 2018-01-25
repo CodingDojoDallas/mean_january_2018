@@ -1,0 +1,8 @@
+.stuff{
+  height: 100px;
+  width: 170px;
+  border: 2px solid green;
+  background-color: #FFF9E6;
+  display: inline-block;
+  padding-left: 11px;
+}
