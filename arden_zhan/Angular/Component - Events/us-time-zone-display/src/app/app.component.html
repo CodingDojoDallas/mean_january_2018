@@ -1,0 +1,6 @@
+<div style="text-align:center">
+  <h1>US Time Zone Display</h1>
+  <button *ngFor='let zone of zones' (click)="switchZone(zone)" [ngClass]="{current: currentZone == zone}">{{ zone }}</button>
+  <button (click)="clear()">Clear</button>
+  <h2 [ngClass]="{hidden: clearFlag}">{{ time | date:'MMM d, y, h:mm:ss a' }}</h2>
+</div>
