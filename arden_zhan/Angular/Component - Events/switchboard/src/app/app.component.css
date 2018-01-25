@@ -1,0 +1,19 @@
+.switches {
+    padding: 10px;
+    display: inline-block;
+    background: black;
+    margin: 1px;
+}
+
+button{
+    height: 50px;
+    width: 50px;
+}
+
+.on{
+    background: green;
+}
+
+.off{
+    background: red;
+}
