@@ -1,0 +1,14 @@
+.ng-invalid { }
+.ng-valid { }
+.ng-untouched { }
+.ng-touched { }
+.ng-dirty { }
+.ng-pristine { }
+
+.register-btn{
+    width: 300px;
+}
+
+.success{
+    color: green;
+}
