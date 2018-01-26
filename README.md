@@ -41,6 +41,7 @@ Full Mean + AnonPosts - https://youtu.be/UFhhqaQwuOM <br>
 AnonPosts Finish - https://youtu.be/J1oSQre5m3c <br>
 Full Mean Login - https://youtu.be/6mhjrxXtDnE <br>
 Full Mean Deployment (ft. Jessica) - https://youtu.be/XNJ8dQqAfZo <br>
+NonAnonPosts - https://youtu.be/ODf4BOyBaiI <br>
 
 ## Demos:
 Login n' Registration - https://youtu.be/4YtbCFlBTdc <br>
