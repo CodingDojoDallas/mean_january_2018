@@ -1,0 +1,40 @@
+.div{
+	background-color: green;
+	font-family: arial;
+	font-size: 30px;
+	padding-bottom: 50px;
+}
+
+.div2{
+	width: 900px ;
+  	margin-left: auto ;
+  	margin-right: auto ;
+  	text-align: center;
+  	font-size: 15px;
+  	background-color: white;
+  	margin-bottom: 100px;
+}
+
+.delete{
+	background-color: red;
+	color: white;
+	width: 150px;
+}
+
+
+.playing{
+  background-color: green;
+}
+
+.notPlaying{
+  background-color: red;
+}
+
+.undecided{
+  background-color: yellow;
+}
+
+button{
+  display: inline-block;
+  width: 150px;
+}

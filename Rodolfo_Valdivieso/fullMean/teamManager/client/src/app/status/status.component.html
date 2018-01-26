@@ -1,0 +1,76 @@
+
+<div class="div">
+	<h1>Player Status - Game {{game}}</h1>
+
+	<a [routerLink]="['/status', 'game', '1']">Game 1</a> |
+	<a [routerLink]="['/status', 'game', '2']">Game 2</a> |
+	<a [routerLink]="['/status', 'game', '3']">Game 3</a> 
+
+		
+	<div class="div2">
+		<table>
+			<thead>
+				<th>Name</th>
+				<th>Actions</th>
+			</thead>
+			<tbody>
+				<tr *ngFor='let player of players' >
+					<td>{{player.name}}</td>
+					<td *ngIf='game==1'>
+						
+						<button *ngIf='player.status1' class="playing">Playing</button>
+						<button *ngIf='player.status1==false  || player.status1== null' (click)='updateStatus1(player._id, player, true, game);' >Playing</button>
+	
+
+						<button *ngIf='player.status1==false' class="notPlaying">Not Playing</button>
+						<button *ngIf='player.status1==true || player.status1== null' (click)='updateStatus1(player._id, player, false, game);' >Not Playing</button>
+
+
+						<button *ngIf='player.status1==null'  class="undecided">Undecided</button>
+						<button *ngIf='player.status1==true || player.status1== false' (click)='updateStatus1(player._id, player, null, game);' >Undecided</button>
+
+					</td>
+
+					<td  *ngIf='game==2' >
+						
+						<button *ngIf='player.status2' class="playing">Playing</button>
+						<button *ngIf='player.status2==false  || player.status2== null' (click)='updateStatus1(player._id, player, true, game);' >Playing</button>
+	
+
+						<button *ngIf='player.status2==false' class="notPlaying">Not Playing</button>
+						<button *ngIf='player.status2==true || player.status2== null' (click)='updateStatus1(player._id, player, false, game);' >Not Playing</button>
+
+
+						<button *ngIf='player.status2==null'  class="undecided">Undecided</button>
+						<button *ngIf='player.status2==true || player.status2== false' (click)='updateStatus1(player._id, player, null, game);' >Undecided</button>
+
+					</td>
+					<td *ngIf='game==3'>
+						
+						<button *ngIf='player.status3' class="playing">Playing</button>
+						<button *ngIf='player.status3==false  || player.status3== null' (click)='updateStatus1(player._id, player, true, game);' >Playing</button>
+	
+
+						<button *ngIf='player.status3==false' class="notPlaying">Not Playing</button>
+						<button *ngIf='player.status3==true || player.status3== null' (click)='updateStatus1(player._id, player, false, game);' >Not Playing</button>
+
+
+						<button *ngIf='player.status3==null'  class="undecided">Undecided</button>
+						<button *ngIf='player.status3==true || player.status3== false' (click)='updateStatus1(player._id, player, null, game);' >Undecided</button>
+
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+
+<!-- 	<router-outlet></router-outlet> -->
+
+
+</div>
+
+
