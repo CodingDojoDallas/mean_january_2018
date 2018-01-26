@@ -1,0 +1,25 @@
+<div class="container list">
+	<div class="row">
+		<div class="col-md-12">
+			<h2><a [routerLink]="['/player','list']">List</a> | <a [routerLink]="['/player', 'addplayer']">Add Player</a></h2>
+			<div class="table">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Player Name</th>
+							<th>Preferred Position</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let player of players">
+						<td>{{ player.name }}</td>
+						<td>{{ player.position }}</td>
+						<td><button (click)="destroy(player)" class="btn btn-danger">Delete</button></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

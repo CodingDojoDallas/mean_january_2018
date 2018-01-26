@@ -1,0 +1,47 @@
+<div class="container status">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1>Player Status - Game {{ game.number }}</h1>
+			<br>
+			<h4><a [routerLink]="['/status', 'game', 1]">Game 1</a> | 
+			<a [routerLink]="['/status', 'game', 2]">Game 2</a> | 
+			<a [routerLink]="['/status', 'game', 3]">Game 3</a></h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Player Name</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody *ngIf="game.number == 1">
+					<tr *ngFor="let player of players">
+						<td>{{ player.name }}</td>
+						<td><button (click)="onSubmit(game.number, player, 1)" class="{{ player.game1[0] }} btn">Playing</button></td>
+						<td><button (click)="onSubmit(game.number, player, 2)" class="{{ player.game1[1] }} btn">Not Playing</button></td>
+						<td><button (click)="onSubmit(game.number, player, 3)" class="{{ player.game1[2] }} btn">Undecided</button></td>
+					</tr>
+				</tbody>
+				<tbody *ngIf="game.number == 2">
+					<tr *ngFor="let player of players">
+						<td>{{ player.name }}</td>
+						<td><button (click)="onSubmit(game.number, player, 1)" class="{{ player.game2[0] }} btn">Playing</button></td>
+						<td><button (click)="onSubmit(game.number, player, 2)" class="{{ player.game2[1] }} btn">Not Playing</button></td>
+						<td><button (click)="onSubmit(game.number, player, 3)" class="{{ player.game2[2] }} btn">Undecided</button></td>
+					</tr>
+				</tbody>
+				<tbody *ngIf="game.number == 3">
+					<tr *ngFor="let player of players">
+						<td>{{ player.name }}</td>
+						<td><button (click)="onSubmit(game.number, player, 1)" class="{{ player.game3[0] }} btn">Playing</button></td>
+						<td><button (click)="onSubmit(game.number, player, 2)" class="{{ player.game3[1] }} btn">Not Playing</button></td>
+						<td><button (click)="onSubmit(game.number, player, 3)" class="{{ player.game3[2] }} btn">Undecided</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
