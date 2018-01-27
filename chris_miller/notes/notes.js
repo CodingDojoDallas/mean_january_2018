@@ -122,3 +122,4 @@ Ninja.findOne({_id: req.params.id}, (err, data ninja) =>{
 
 ===Modularization
 - plug and play
+

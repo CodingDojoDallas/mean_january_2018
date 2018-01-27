@@ -1,0 +1,22 @@
+{
+  "name": "anonNotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "body-parser": "^1.18.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.13.9",
+    "path": "^0.12.7",
+    "port": "^0.8.1",
+    "routes": "^2.1.0"
+  }
+}
