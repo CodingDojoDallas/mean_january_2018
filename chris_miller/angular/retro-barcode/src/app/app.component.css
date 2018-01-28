@@ -1,0 +1,14 @@
+#color_block{
+	width: 30px;
+	height: 30px;
+	border: solid;
+	border-width: 1px 0px 1px 1px;
+	display: inline-block;
+}
+#end_block{
+	width: 30px;
+	height: 32px;
+	border: solid;
+	border-width: 0px 0px 0px 1px;
+	display: inline-block;	
+}

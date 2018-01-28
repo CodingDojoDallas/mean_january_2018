@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+ 
+  <form action="" >
+    <h3>Initial Power Level:</h3>
+    <select name="power" id="power" [(ngModel)]="level">
+      <option *ngFor="let number of numbers"  value="{{number+1}}">{{number+1}}</option>
+    </select>
+    <button (click)="calculatePowers()">Calculate Powers</button>
+  </form>
+  
+
+  <app-fighter [fighter]='fighters[0]'></app-fighter>
+  <app-fighter [fighter]='fighters[1]'></app-fighter>
+  <app-fighter [fighter]='fighters[2]'></app-fighter>
+  <app-fighter [fighter]='fighters[3]'></app-fighter>
+  <app-fighter [fighter]='fighters[4]'></app-fighter>
+  <app-fighter [fighter]='fighters[5]'></app-fighter>
+
+
+</div>
+
+
+

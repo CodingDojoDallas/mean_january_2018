@@ -1,0 +1,24 @@
+
+1
+    undefined
+2
+    magnet
+3
+    super cool
+4
+     errors out at gone
+otherwise prints:
+    chicken
+    half-chicken
+5
+    error mean isn't defined
+6
+    undefined
+    rock
+    r&b
+    disco
+7
+    san jose
+    seattle
+    burbank
+    san jose

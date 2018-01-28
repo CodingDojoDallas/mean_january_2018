@@ -33,6 +33,15 @@ Mongoose - https://youtu.be/v9M8POVHWdo <br>
 Review/Modularize - https://youtu.be/AcLFf7Gnmic <br>
 Angularrr/Typescript - https://youtu.be/pet1yMOL0IM <br>
 Basic Angular - https://youtu.be/LKHHDCvG6-k <br>
+Nested Components (Input/Output) - https://youtu.be/A8G8DCYBgBc <br>
+Services - https://youtu.be/LEOdAd5Ficc <br>
+Routers/Observables - https://youtu.be/T2-86FVnVmI <br>
+Debauchery - https://youtu.be/xYxIG3SdZjA <br>
+Full Mean + AnonPosts - https://youtu.be/UFhhqaQwuOM <br>
+AnonPosts Finish - https://youtu.be/J1oSQre5m3c <br>
+Full Mean Login - https://youtu.be/6mhjrxXtDnE <br>
+Full Mean Deployment (ft. Jessica) - https://youtu.be/XNJ8dQqAfZo <br>
+NonAnonPosts - https://youtu.be/ODf4BOyBaiI <br>
 
 ## Demos:
 Login n' Registration - https://youtu.be/4YtbCFlBTdc <br>

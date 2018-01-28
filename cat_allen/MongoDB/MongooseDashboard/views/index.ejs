@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title>Unicorns!</title>
+</head>
+	<body>
+	<h1>Unicorns!</h1>
+	<a href="/unicorns/new">Create New Unicorn</a>
+
+	<h2>List of All Unicorns:</h2>
+	<% for (var unicorns of unicorns) { %>
+
+	<p>Name: <a href="/unicorns/<%= unicorns._id %>"><%= unicorns.name %></a></p>
+	<p>Age: <%= unicorns.age %></a></p>
+
+	<% } %>
+</body>
+</html>

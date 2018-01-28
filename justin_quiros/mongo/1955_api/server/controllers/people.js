@@ -9,7 +9,7 @@ module.exports = {
   show: function(req, res) {
     person = Person.find({name: req.params.name}, function(err, person){
     res.json(person);
-  })
+    })
   },
   create: function(req, res) {
     console.log(req.params.name)
@@ -27,5 +27,5 @@ module.exports = {
     person = Person.remove({name: req.params.name}, function(err, person){
     res.redirect('/');
   })
-}
+ }
 }

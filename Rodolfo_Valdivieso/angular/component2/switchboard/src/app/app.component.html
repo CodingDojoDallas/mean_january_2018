@@ -1,0 +1,8 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h1>
+    Welcome to {{ title }}!
+  </h1>
+<div  *ngFor="let box of arr; let idx = index" [ngClass]="{'on': classes[idx]}">
+  <button (click)='turnOnOff(idx)'>{{box}}</button>
+</div>

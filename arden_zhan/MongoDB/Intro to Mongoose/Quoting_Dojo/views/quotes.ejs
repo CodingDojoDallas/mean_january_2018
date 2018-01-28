@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quoting Dojo - Quotes</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <h2>Here are the awesome quotes!</h2>
+        <% for (var quote in quotes){ %>
+                <p class="quote">"<%= quotes[quote].quote %>"</p>
+                <p class="name">-<%= quotes[quote].name %> at <%= quotes[quote].createdAt %></p>
+        <% } %>
+        <p><button><a href="/">Go Back</a></button></p>
+</body>
+</html>

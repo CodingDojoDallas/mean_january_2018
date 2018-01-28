@@ -97,4 +97,28 @@ npm init -y
 
 focus on operators
 
+1.16
+required [true, "Name is required"]
 
+, {timestamps: true}
+
+_id
+ninja._id
+Name: <a href="/ninas/<%= ninja._id %>"
+
+app.get('ninjas/:id', (req, res))
+//for getting one object
+Ninja.findOne({_id: req.params.id}, (err, data ninja) =>{
+	if(err){
+		console.log(err);
+	}
+	return res.render('show', {key: data ninja});
+})
+
+===Associations
+- Make new Schema 
+- add attributes
+- link it 
+
+===Modularization
+- plug and play

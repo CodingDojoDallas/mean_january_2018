@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Message Board</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h3>Cat's Message Board</h3>
+	<h2>Add Message</h2>
+	<form action ="/post" id="post" method="post">
+	<p>Name: <input type="text" name="name"></p>
+	<p>Message: <input type="text" name="content"></p>
+	<input type="submit" value="Post Message">
+	</form>
+
+	<% if(typeof(errors) != 'undefined' ) { %>
+	<% for (var x in errors) { %>
+	<h3><%= errors[x].message %></h3>
+	<% } %>
+	<% } %>
+
+	<div class = "post">
+	<% for(post of posts) { %> 
+	<p>Name: <%= post.name %></p>
+	<p>Message: <%= post.content %></p>
+	</div>
+
+		<% for(comment of post.comments ) { %> 
+		<div class = "comment">
+		<h4>All Comments:</h4>
+		<p>Name: <%= comment.name %></p>
+		<p>Comment: <%= comment.content %></p>
+		</div>
+		<% } %>
+
+		
+		<form action ="/posts/<%= post.id %>" id="comment" method="post">
+		<h4>Add Comment</h4>
+		<p>Name: <input type="text" name="name" class="name"></p>
+		<p>Comment: <input type="text" name="content"></p>
+		<input type="submit" value="Post Comment">
+		</form>
+
+
+	<% } %>
+
+</body>
+</html>

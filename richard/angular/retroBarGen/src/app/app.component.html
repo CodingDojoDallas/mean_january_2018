@@ -1,0 +1,22 @@
+<!-- <div style="text-align:center">
+  <h6>
+    {{title}}!
+  </h6>
+  
+  <div class="pixel" *ngfor="let color of colors"
+    [ngStyle]="{background-color": color.random}
+    (click)="outputColor(color.random)"></div>
+    <button id="generate-button" (click)="randomColors()">Generate</button>
+</div> -->
+
+
+<div style="text-align:center">
+  <h4>
+   {{title}}
+  </h4>
+  </div>
+
+     <div class="pixel" *ngFor='let color of colors' [ngStyle]="{'background-color':color.random}">
+
+
+     </div>

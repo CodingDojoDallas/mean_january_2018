@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <h1>Counter</h1>
+    <p><%= count %> times.</p>
+
+    <div class="options">
+        <form action="/add2" method="post">
+            <input type="submit" value="+2">
+        </form>
+        <form action="/reset" method="post">
+            <input type="submit" value="Reset">
+        </form>
+    </div>
+</body>
+</html>

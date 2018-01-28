@@ -20,7 +20,7 @@ app.use(session(
 	saveUninitialized: true
 }))
 
-mongoose.connect('mongodb://localhost/user');
+mongoose.connect('mongodb://localhost/coyote');
 
 routes(app);
 

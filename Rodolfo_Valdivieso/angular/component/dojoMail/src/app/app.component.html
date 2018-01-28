@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <table>
+    <tr>
+      <td>Email</td>
+      <td>Importance</td>
+      <td>Subject</td>
+      <td>Content</td>
+    </tr>
+    <tr *ngFor="let email of arr; let idx = index">
+      <td>{{ email.email.toUpperCase() }}</td>
+      <td *ngIf='email.importance'>High</td>
+      <td *ngIf='!email.importance'>Low</td>
+      <td [ngStyle]="{
+                        'color': 'green',
+                        'font-weight': 'bold',
+                        'text-transform': 'uppercase'
+                      }">{{ email.subject }}</td>
+      <td>{{ email.content }}</td>
+    </tr>
+  </table>
+</div>
+
+

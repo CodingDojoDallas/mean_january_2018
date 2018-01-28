@@ -1,0 +1,9 @@
+.fighter{
+	font-family: arial;
+	background-color: green;
+	display: inline-block;
+	width: 350px;
+	height: 250px;
+	color: white;
+	border:1px solid yellow;
+}

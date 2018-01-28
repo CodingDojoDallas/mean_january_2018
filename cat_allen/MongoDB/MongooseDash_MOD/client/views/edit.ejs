@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title>Edit a Unicorn</title>
+</head>
+	<body>
+	<h1>Edit <%= unicorn.name%></h1>
+	<form action="/unicorns/<%= unicorn._id %>" id="edit" method="post">
+		<p>Name: <input name='name' type='text' value="<%= unicorn.name %>"></p>
+		<p>Age: <input name='age' type='number' value="<%= unicorn.age %>"></p>
+		<p>Color: <input name='color' type='text' value="<%= unicorn.color %>"></p>
+		<input type="submit" value="Edit My Unicorn">
+	</form>
+	<form action="/unicorns/delete/<%= unicorn._id %>" id="delete" method="post">
+	<input type="submit" value="Delete">
+	</form>
+		
+</body>
+</html>

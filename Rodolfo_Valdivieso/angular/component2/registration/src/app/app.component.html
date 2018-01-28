@@ -1,0 +1,224 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div >
+  <h1 style="text-align:center">
+    Registration {{ title }}!
+  </h1>
+
+  
+  <h3 *ngFor="let user of users; let idx = index" class="welcome">
+   Thank you for registering with us  {{user.first_name}}. We just send you a confirmation email at {{user.email}}, and we will send you all mail to {{user.street}}, {{user.city}}, {{user.state}}.
+   Have a Wonderful day!.
+  </h3>
+
+
+  <h2 style="text-align:center">Account Information</h2>
+  <form (submit)="onSubmit()" >
+  <table >
+    <tr>
+      <td>*First Name:</td>
+      <td>
+        <input 
+          type="text" 
+          name="first_name"
+          required 
+          minlength="1" 
+          maxlength="100"
+          [(ngModel)]="user.first_name"
+          #first_name="ngModel"
+        >
+        <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)"
+     class="alert alert-danger">
+          <div *ngIf="first_name.errors.required">
+            First Name is required.
+          </div>
+        </div>
+        
+      </td>
+    </tr>
+    <tr>
+      <td>*Last Name:</td>
+      <td>
+        <input 
+          type="text" 
+          name="last_name"
+          required 
+          minlength="1" 
+          maxlength="100"
+          [(ngModel)]="user.last_name"
+          #last_name="ngModel"
+        >
+        <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)"
+     class="alert alert-danger">
+          <div *ngIf="last_name.errors.required">
+            Last Name is required.
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>*Email:</td>
+      <td>
+        <input 
+          type="text" 
+          name="email"
+          required 
+          minlength="4" 
+          maxlength="24"
+          pattern="[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}"
+          [(ngModel)]="user.email"
+          #email="ngModel"
+        >
+        
+        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+     class="alert alert-danger">
+          <div *ngIf="email.errors">
+            Email must be valid.
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>*Password:</td>
+      <td>
+        <input 
+          type="text" 
+          name="password"
+          required 
+          minlength="16" 
+          maxlength="32"
+          
+          [(ngModel)]="user.password"
+          #password='ngModel'
+        >
+        <div *ngIf="password.invalid && (password.dirty || password.touched)"
+     class="alert alert-danger">
+          <div *ngIf="password.errors">
+            Password must be at least 15 characters long.
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>*Password Confirmation:</td>
+      <td>
+        <input 
+          type="text" 
+          name="pass_confirm"
+          required 
+          [(ngModel)]="user.pass_confirm"
+          #pass_confirm="ngModel"
+        >
+
+        <div *ngIf="passwordConfirmation()"
+     class="alert alert-danger">
+         
+            Password confirmation must match password.
+          
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>*Street:</td>
+      <td>
+        <input 
+          type="text" 
+          name="street"
+          required 
+          minlength="4" 
+          maxlength="24"
+          [(ngModel)]="user.street"
+          #street="ngModel"
+        >
+        <div *ngIf="street.invalid && (street.dirty || street.touched)"
+     class="alert alert-danger">
+          <div *ngIf="street.errors.required">
+            Address is required.
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Unit:</td>
+      <td>
+        <input 
+          type="text" 
+          name="unit" 
+          [(ngModel)]="user.unit"
+          #unit="ngModel"
+        >
+        
+      </td>
+    </tr>
+    <tr>
+      <td>*City:</td>
+      <td>
+        <input 
+          type="text" 
+          name="city"
+          required 
+          minlength="4" 
+          maxlength="24"
+          [(ngModel)]="user.city"
+          #city="ngModel"
+        >
+        <div *ngIf="city.invalid && (city.dirty || city.touched)"
+     class="alert alert-danger">
+          <div *ngIf="city.errors.required">
+            City is required.
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>*State:</td>
+      <td>
+        <select name="state" 
+                id="state"
+                required 
+                [(ngModel)]="user.state"
+                #state="ngModel"
+                >
+          
+
+          <option value="TX">TX</option>
+          <option value="FL">FL</option>
+          <option value="CA">CA</option>
+        </select>
+
+        <div *ngIf="state.invalid && (state.dirty || state.touched)"
+     class="alert alert-danger">
+          <div *ngIf="state.errors.required">
+            State is required.
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>*I'm feeling lucky:</td>
+      <td>
+
+          
+        <input type="radio" 
+                name="lucky" 
+                value='true' 
+                selected
+                required 
+                [(ngModel)]="user.lucky" 
+                #lucky="ngModel">Yes
+        <input type="radio" name="lucky" value='false' required [(ngModel)]="user.lucky" #lucky="ngModel">No
+        
+          <div class="alert alert-danger" *ngIf="lucky.errors">
+            Lucky is required.
+          </div>
+        
+       
+
+      </td>
+    </tr>
+  </table>
+  <div ><button *ngIf="first_name.valid && last_name.valid && email.valid && password.valid && pass_confirm.valid && street.valid && city.valid && state.valid && (user.lucky)">Register</button></div>
+  </form>
+</div>
+
+
+

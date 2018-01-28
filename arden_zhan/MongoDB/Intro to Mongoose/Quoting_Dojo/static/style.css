@@ -1,0 +1,19 @@
+*{
+	margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+body{
+    padding: 1em;
+    text-align: left;
+    font-size: 1em;
+}
+
+input{
+    padding: 0.5em;
+}
+
+.name {
+    margin-left: 1em;
+}
