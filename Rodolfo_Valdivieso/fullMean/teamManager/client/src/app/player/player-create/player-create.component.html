@@ -1,0 +1,51 @@
+<div class="div">
+	<h1>Add Player</h1>
+	<form (submit)="onSubmit(); "  #form="ngForm" >
+	<table>
+		<tr>
+			<td><label for="">Player Name</label></td>
+			<td>
+				<div *ngIf="name.invalid && (name.dirty || name.touched)"
+			     class="alert">
+			          <div *ngIf="name.errors">
+			            Name is required.
+			          </div>
+			    </div>
+				<input 
+				type="text"
+				name="name"
+		        required 
+		        minlength="2" 
+		        maxlength="100"
+		        [(ngModel)]="player.name"
+		        #name="ngModel"
+				></td>
+		</tr>
+		<tr>
+			<td><label for="">Preferred Position</label></td>
+			<td>
+				<div *ngIf="position.invalid && (position.dirty || position.touched)"
+			     class="alert">
+			          <div *ngIf="position.errors">
+			            Position is required.
+			          </div>
+			    </div>
+				<input 
+				type="text"
+				name="position" 
+		        minlength="2" 
+		        maxlength="100"
+		        [(ngModel)]="player.position"
+		        #position="ngModel"
+				></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button [disabled]='form.invalid' >Create</button>
+			</td>
+			
+		</tr>
+	</table>
+	</form>
+
+</div>
