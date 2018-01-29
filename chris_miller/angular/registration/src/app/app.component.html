@@ -1,0 +1,35 @@
+<h1>Registration</h1>
+
+<div>
+  <form (submit) = "onSubmit()">
+  First Name: 
+  <input type="text" name="first_name"
+  required
+  minlength="2"
+  maxlength="10"
+  [(ngModel)]="user.first_name"
+  #first_name="ngModel"
+  >
+  Last Name: <input type="text" name="last_name"
+  required
+  minlength="2"
+  maxlength="10">
+  Email: <input type="text" name="email">
+  Password: <input type="text" name="password">
+  Password Confirmation: <input type="text" name="password_conf">
+  Street Address: <input type="text" name="address">
+  Unit/Apt #: <input type="text" name="unit_num">
+  City: <input type="text" name="city">
+  State: <input type="text" name="state">
+  <button type="submit">Register</button>
+  </form>
+</div>
+<div>{{ first_name.errors | json }}
+        <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)"
+     class="alert alert-danger">
+          <div *ngIf="first_name.errors.required">
+            First Name is required.
+          </div>
+        </div>
+        
+</div>

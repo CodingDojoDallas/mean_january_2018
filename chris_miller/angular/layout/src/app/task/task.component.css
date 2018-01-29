@@ -1,0 +1,8 @@
+div{
+	background-color: blue;
+	font-family: "Arial";
+	width: 300px;
+	height: 200px;
+	display: inline-block;
+	vertical-align: top;
+}

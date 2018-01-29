@@ -1,0 +1,31 @@
+<form (submit)="onSubmit(); 
+	createPost.resetForm()" 
+	#createPost="ngForm">
+
+	Title: <input 
+	name="title"
+	required
+	minlength="1"
+	maxlength="20"
+	[(ngModel)]="post.title"
+	#title="ngModel" />
+
+	{{ title.errors | json }}
+
+	Content: <textarea
+	name="content"
+	required
+	minlength="1"
+	maxlength="300"
+	[(ngModel)]="post.content"
+	#content="ngModel" >
+		
+
+	</textarea>
+	{{ content.errors | json }}
+
+	<button type="submit">
+		Create Post		
+	</button>
+	
+</form>
