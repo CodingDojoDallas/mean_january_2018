@@ -1,0 +1,30 @@
+<div class="user-new-div">
+
+	<form
+		(submit)="onSubmit(); createUser.resetForm()"
+		#createForm="ngForm"
+	>
+		<label>Name:</label>
+		<input
+			type="text"
+			name="name"
+			required
+			minlength="2"
+			maxlength="30"
+			[(ngModel)]="user.name"
+			#name="ngModel"
+		>
+		<small
+			class="errors"
+			[hidden]="name.valid || (name.untouched && !createUser.submitted)"
+		>Name is required (Minimum character length of 2).
+		</small>
+
+		<button
+			value="enter"
+			type="submit"
+		>Enter
+		</button>
+
+	</form>
+</div>
