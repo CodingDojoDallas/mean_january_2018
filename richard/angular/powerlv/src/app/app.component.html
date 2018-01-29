@@ -1,0 +1,15 @@
+<body>
+  <h1>Power Level</h1>
+  <input type="number" max="100" min="0" [(ngModel)]="powerlevel">
+  <div class='row'>
+    <app-human [power]="powerlevel"></app-human>
+    <app-saiyan [power]="powerlevel"></app-saiyan>
+    <app-supersaiyan [power]="powerlevel"></app-supersaiyan>
+  </div>
+  <div class='row'>
+    <app-saiyanTwo [power]="powerlevel"></app-saiyanTwo>
+    <app-saiyanThree [power]="powerlevel"></app-saiyanThree>
+    <app-saiyanFour [power]="powerlevel"></app-saiyanFour>
+  </div>
+</body>
+
