@@ -1,0 +1,8 @@
+<div *ngFor="let building of buildings">
+  <h2>{{ building | titlecase }}</h2>
+  <h4 *ngIf="building == 'farm'">Earns 2 - 5 Gold</h4>
+  <h4 *ngIf="building == 'cave'">Earns 5 - 10 Gold</h4>
+  <h4 *ngIf="building == 'casino'">Earns/Loses up to 100 Gold</h4>
+  <h4 *ngIf="building == 'house'">Earns 7 - 15 Gold</h4>
+  <button (click)="updateGold(building)">{{ building | titlecase }}!</button>
+</div>
