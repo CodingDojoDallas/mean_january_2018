@@ -1,0 +1,3 @@
+<app-quote-new [quotes]="quotes" (newQuote)='create($event)' (sortQuote)='sort()'></app-quote-new>
+
+<app-quote-list [quotes]="quotes" (destroyQuote)='destroy($event)' (sortQuote)='sort()'></app-quote-list>

@@ -1,0 +1,13 @@
+form {
+    width: 400px;
+    text-align: right;
+}
+
+textarea {
+    width: 380px;
+    height: 100px;
+}
+
+.error {
+    color: red;
+}
