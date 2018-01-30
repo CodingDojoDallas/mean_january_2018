@@ -1,0 +1,11 @@
+<div>
+  <h4>{{ myUser.title }}</h4>
+  <p *ngIf="powerLevel">Power Level: {{ myUser.multiplier * powerLevel }}</p>
+
+  <p *ngIf='(myUser.multiplier * powerLevel > 9000) && (myUser.multiplier * powerLevel < 20000)'>"Over 9000!"</p>
+  
+	<p *ngIf='(myUser.multiplier * powerLevel >= 20000) && (myUser.multiplier * powerLevel < 50000)'>"Superlative!"</p>
+
+	<p *ngIf='myUser.multiplier * powerLevel >= 50000'>"The One"</p>
+
+</div>
