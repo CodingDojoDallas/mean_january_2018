@@ -44,8 +44,13 @@ export class DataService {
 
     this._http.get(`http://api.openweathermap.org/data/2.5/weather?id=${cityID}&appid=${key}`).subscribe(
       data => { this.mapData(data); },
-      // data => { this.cityInfo = data; },
+      // data => { 
+      //   this.cityInfo = data;
+      //   console.log(data);
+      // },
       // Ask Matt why this doesn't work?
+      // Needs callback function (mapData()), to wait, then process next line in component. 
+      // js doesn't treat console.log as something to wait for though
 
       // error => { console.log(error); }
     );
