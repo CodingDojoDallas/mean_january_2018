@@ -1,0 +1,6 @@
+a {
+    padding: 0 0.5em;
+}
+a:not(:last-child) {
+    border-right: solid 1px black;
+}
