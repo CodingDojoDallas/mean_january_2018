@@ -47,7 +47,7 @@ export class DataService {
       // data => { this.cityInfo = data; },
       // Ask Matt why this doesn't work?
 
-      error => { console.log(error); }
+      // error => { console.log(error); }
     );
   }
 
@@ -59,6 +59,4 @@ export class DataService {
   	this.cityInfo.tempLow = data.main.temp_min;
   	this.cityInfo.status = data.weather[0].description;
   }
-
-
 }
