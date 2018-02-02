@@ -59,7 +59,7 @@ app
 .get('/tasks', TaskController.index)
 .post('/tasks', TaskController.create)
 
-app.all("**", (request, response) => { response.sendFile(path.resolve("./public/dist/index.html")) });
+app.all("*", (req, res) => { res.sendFile(path.resolve("./angular-app/dist/index.html")) });
 
 
 // Listen
