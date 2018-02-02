@@ -1,0 +1,10 @@
+<div class="container list">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="note" *ngFor="let note of notes">
+				<p>{{ note.createdAt | date: 'medium' }}</p>
+				<p>{{ note.content }}</p>
+			</div>
+		</div>
+	</div>
+</div>

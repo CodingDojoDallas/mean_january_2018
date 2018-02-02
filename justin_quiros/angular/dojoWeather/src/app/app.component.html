@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div container="container" style="text-align:center">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>
+                {{ title }}!
+            </h1>
+            <br>
+            <a [routerLink]="['/seattle']">Seattle WA</a> | 
+            <!-- <a [routerLink]="['/sanjose']">San Jose CA</a> |  -->
+            <a [routerLink]="['/burbank']">Burbank CA</a> | 
+            <a [routerLink]="['/dallas']">Dallas TX</a> | 
+            <a [routerLink]="['/washington']">Washington DC</a> | 
+            <a [routerLink]="['/chicago']">Chicago IL</a>  
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

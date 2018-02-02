@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container score">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Git Hub Score</h1>
+            <br>
+            <form class="form-group"  (submit)="onSubmit(username)" #form="ngForm">
+                <p *ngIf="username.errors"><font color="red">Username is required</font></p>
+                <input 
+                  class="form-control"
+                  type="text"
+                  name="username"
+                  required
+                  [(ngModel)]="user.username"
+                  #username="ngModel">
+                <br>
+                <button [disabled]="!form.valid">Calculate my Github Score</button>
+            </form>
+        </div>
+        <div class="col-md-6 text-center">
+          <h1>Your Score: {{ user.score }}</h1>
+          <h5 [ngStyle]="{'color': user.color}">{{ user.level }}</h5>
+        </div>
+    </div>
+</div>

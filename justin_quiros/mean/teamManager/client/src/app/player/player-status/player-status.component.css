@@ -1,0 +1,17 @@
+.status {
+	border: solid 1px;
+	padding-top: 30px;
+	margin-top: 20px;
+}
+
+.green {
+	background-color: green;
+}
+
+.red {
+	background-color: red;
+}
+
+.yellow {
+	background-color: yellow;
+}

@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Create a New Product</h1>
+			<form class="form-group" (submit)="onSubmit()" #productform="ngForm">
+				<table class="table">
+					<tr>
+						<td>Title </td>
+						<td><input class="form-control" 
+                                  type="text" 
+                                  name="title"
+                                  required 
+                                  minlength="3" 
+                                  maxlength="24" 
+                                  [(ngModel)]="product.title"
+                                  #title="ngModel"></td>
+					</tr>
+					<tr>
+						<td>Price </td>
+						<td><input class="form-control" 
+                                  type="number" 
+                                  name="price"
+                                  required 
+                                  [(ngModel)]="product.price"
+                                  #price="ngModel"></td>
+					</tr>
+					<tr>
+						<td>Image Url </td>
+						<td><input class="form-control" 
+                                  type="text" 
+                                  name="url"
+                                  minlength="3" 
+                                  maxlength="24" 
+                                  [(ngModel)]="product.url"
+                                  #url="ngModel"></td>
+					</tr>
+				</table>
+				<button type="submit" [disabled]="!productform.valid">Create</button>
+			</form>
+		</div>
+	</div>
+</div>

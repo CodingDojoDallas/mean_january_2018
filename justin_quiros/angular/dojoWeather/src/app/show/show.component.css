@@ -1,0 +1,13 @@
+.container {
+	margin-top: 50px;
+}
+
+.weather {
+	padding: 20px;
+	border: solid 1px;
+}
+
+#img {
+	height: 225px;
+	width: 325px;
+}

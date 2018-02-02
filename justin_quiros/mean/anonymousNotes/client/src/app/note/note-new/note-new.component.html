@@ -1,0 +1,24 @@
+<div class="container new">
+	<div class="row">
+		<div class="col-md-12">
+			<table>
+				<form class="form-group" (submit)="onSubmit()" #form="ngForm">
+					<tr>
+						<td>
+							Note: <input
+								type="text"
+								name="content"
+								required
+								minlength="3"
+								maxlength="320"
+								[(ngModel)]="note.content"
+								#content="ngModel">
+								<button type="submit" [disabled]="!form.valid">Add Note</button>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</div>
+	</div>
+</div>
+<app-note-list></app-note-list>

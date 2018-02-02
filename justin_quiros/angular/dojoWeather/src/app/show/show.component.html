@@ -1,0 +1,15 @@
+<div class="container weather" *ngIf="city.name">
+	<div class="row">
+		<div class="col-md-8 text-center">
+			<h1> {{ city.name }}</h1>
+			<p>Humidity: {{ city.humidity }}</p>
+			<p>Temperature (Average): {{ city.avg }}</p>
+			<p>Temperature (High): {{ city.high }}</p>
+			<p>Temperature (Low): {{ city.low }}</p>
+			<p>Status: {{ city.status }}</p>
+		</div>
+		<div class="col-md-4">
+			<img src="../assets/img/{{ city.name }}.jpeg" id="img">
+		</div>
+	</div>
+</div>

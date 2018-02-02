@@ -1,0 +1,39 @@
+<div class="container addplayer">
+	<div class="row">
+	<div class="col-md-12">
+		<h2><a [routerLink]="['/player','list']">List</a> | <a [routerLink]="['/player', 'addplayer']">Add Player</a></h2>
+		<div class="col-md-12">
+			                <form class="form-group" (submit)="onSubmit()" #regform="ngForm">
+                    <table>
+                        <tr>
+                            <td><input
+                                  class="form-control" 
+                                  type="text" 
+                                  name="name"
+                                  required 
+                                  minlength="2" 
+                                  maxlength="24" 
+                                  [(ngModel)]="player.name"
+                                  #name="ngModel"
+                                  placeholder="Name" >
+                                  </td>
+                                  <td *ngIf="name.errors"><font color="red"> - Name must be at least 2 characters in length</font></td>
+                        </tr>
+                        <tr>
+                            <td><input 
+                                  class="form-control" 
+                                  type="text" 
+                                  name="position"
+                                  maxlength="24" 
+                                  [(ngModel)]="player.position" 
+                                  #posiiton="ngModel"
+                                  placeholder="Preferred Position"  ></td>
+                        </tr>
+                        <br>
+                            <input type="submit" value="Add" [disabled]="!regform.valid">
+                    </table>
+                </form>
+            </div>
+		</div>
+	</div>
+</div>
