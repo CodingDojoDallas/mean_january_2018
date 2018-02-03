@@ -42,6 +42,7 @@ var routes = [
             { path: '', pathMatch: 'full', component: note_list_component_1.NoteListComponent },
             { path: 'new', component: note_new_component_1.NoteNewComponent }
         ] },
+    { path: '**', redirectTo: '/' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

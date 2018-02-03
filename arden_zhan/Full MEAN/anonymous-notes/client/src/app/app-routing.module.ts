@@ -5,7 +5,7 @@ import { NoteListComponent } from './note/note-list/note-list.component';
 import { NoteNewComponent } from './note/note-new/note-new.component';
 
 const routes: Routes = [
-
+  
   { path: '', pathMatch: 'full', component: NoteComponent, children: [
     { path: '', pathMatch: 'full', component: NoteNewComponent }
   ] },
@@ -15,6 +15,7 @@ const routes: Routes = [
     { path: 'new', component: NoteNewComponent }
   ] },
 
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
