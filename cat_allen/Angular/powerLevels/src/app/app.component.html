@@ -1,0 +1,12 @@
+<form (submit)= 'onSubmit($event)' #form='ngForm'>
+  <input name= 'level' type="number" min="1" max="100" [(ngModel)] = 'basePower'>
+  <input type="submit" name="submit" value="Calculate Powers" [disabled]='! form.valid'>
+</form>
+
+<div class="stuff" *ngFor="let evolve of evolves">
+  <p>{{evolve.name}}</p>
+  <p>{{currentPower * evolve.modifier}}</p>
+  <p *ngIf='currentPower * evolve.modifier > 9000 && currentPower * evolve.modifier < 20001'>Over 9000!</p>
+  <p *ngIf='currentPower * evolve.modifier > 20000 && currentPower * evolve.modifier < 50000'>Superlative!</p>
+  <p *ngIf='currentPower * evolve.modifier === 50000'>The One</p>
+</div>
