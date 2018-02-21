@@ -21,9 +21,7 @@ io.sockets.on('connection', (socket) => {
     socket.emit('count_response', count);
 
     socket.on("button_push", (btn) => {
-        console.log("server listened");
-        if (btn == "epic-btn") count++;
-        else if (btn == "reset-btn") count = 0;
+        btn == "epic-btn" ? count++ : count = 0;
         io.emit('count_response', count);
     });
 
