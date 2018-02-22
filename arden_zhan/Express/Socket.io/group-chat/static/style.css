@@ -1,0 +1,52 @@
+*{
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+body{
+    padding: 1em;
+    text-align: left;
+    font-size: 1em;
+}
+
+p{
+    margin: 0 auto;
+}
+
+input {
+    width: 340px;
+    padding: 0.5em;
+}
+
+.chat-container {
+    margin: 0 auto;
+}
+
+.messages-container {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.users-container {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 150px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+form {
+    width: 400px;
+}
+
+button {
+    height: 32.53px;
+    width: 35px;
+}
