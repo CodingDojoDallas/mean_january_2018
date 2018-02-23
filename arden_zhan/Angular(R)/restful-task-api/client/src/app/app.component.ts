@@ -10,28 +10,31 @@ import { Task } from './task';
 export class AppComponent implements OnInit{
   title = 'RESTful Task API';
   tasks: Task[];
+  retrievedTask: Task;
 
   constructor(private _httpService: HttpService){
     this.tasks = [];
+    this.retrievedTask = new Task();
   }
 
   ngOnInit(){
     this.getTasksFromService();
-    // this.getOneTaskFromService(this.tasks[0]['_id']);
-    
-    this.createTaskByService({
-      title: "Test Task", 
-      description: "Test task for create, update, delete"
-    });
 
-    this.deleteTaskByService("5a8f76b2ed464f1f40c66af5");
+    // this.createTaskByService({
+    //   title: "Test Task", 
+    //   description: "Test task for create, update, delete"
+    // });
+
+    // this.deleteTaskByService("5a8f783ce693321324584ce3");
   }
 
   getTasksFromService(){
     this._httpService.getTasks().subscribe(
       tasks => {
         this.tasks = tasks;
-        console.log("Got our tasks!", this.tasks);
+
+        // Get Second Task after getting all tasks
+        this.getOneTaskFromService(this.tasks[1]['_id']);
       },
       error => {
         console.log("Error:", error);
@@ -42,7 +45,7 @@ export class AppComponent implements OnInit{
   getOneTaskFromService(taskID){
     this._httpService.getOneTask(taskID).subscribe(
       task => {
-        console.log("Retrieved Task:", task);
+        this.retrievedTask = task;
       },
       error => {
         console.log("Error", error);

@@ -12,7 +12,7 @@ export class HttpService {
   }
 
   getOneTask(taskID){
-    return this._http.get(`/tasks/${taskID}`);
+    return this._http.get<Task>(`/tasks/${taskID}`);
   }
 
   createTask(taskBody){
