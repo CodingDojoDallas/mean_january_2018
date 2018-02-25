@@ -11,74 +11,108 @@ export class AppComponent implements OnInit{
   title = 'RESTful Task API';
   tasks: Task[];
   retrievedTask: Task;
+  showToggleText: string;
+  newTask: Task;
+  editedTask: Task;
+  editFormID: number;
 
-  constructor(private _httpService: HttpService){
-    this.tasks = [];
-    this.retrievedTask = new Task();
-  }
+  constructor(private _httpService: HttpService){ }
 
   ngOnInit(){
-    this.getTasksFromService();
-
-    // this.createTaskByService({
-    //   title: "Test Task", 
-    //   description: "Test task for create, update, delete"
-    // });
-
-    // this.deleteTaskByService("5a8f783ce693321324584ce3");
+    this.tasks = [];
+    this.showToggleText = "Show All Tasks";
+    this.editFormID = -1;
+    this.newTask = new Task;
+    this.editedTask = new Task;
   }
 
-  getTasksFromService(){
+  generateFormID(taskIndex){
+    // Toggle Edit Form
+    if (this.editFormID == taskIndex) return this.editFormID = -1;
+
+    // Moves Edit Form to different task box
+    this.editFormID = taskIndex;
+  }
+
+  createTask(){
+    this._httpService.createTask(this.newTask).subscribe(
+      task => {
+        this.tasks.push(task);
+      },
+      error => {
+        console.log("Error:", error);
+      }
+    );
+    this.newTask = new Task;
+  }
+
+  toggleTasks(){
+    if (this.tasks.length == 0){
+      this.showAllTasks(); 
+      this.showToggleText = "Hide All Tasks";
+    }
+    else {
+      this.tasks = [];
+      this.showToggleText = "Show All Tasks";
+    }
+  }
+
+  showAllTasks(){
     this._httpService.getTasks().subscribe(
-      tasks => {
-        this.tasks = tasks;
-
-        // Get Second Task after getting all tasks
-        this.getOneTaskFromService(this.tasks[1]['_id']);
-      },
-      error => {
-        console.log("Error:", error);
-      }
-    );
+      tasks => this.tasks = tasks,
+      error => console.log("Error:", error)
+    )
   }
 
-  getOneTaskFromService(taskID){
-    this._httpService.getOneTask(taskID).subscribe(
-      task => {
-        this.retrievedTask = task;
-      },
-      error => {
-        console.log("Error", error);
-      }
-    );
+  retrieveTask(event: KeyboardEvent){
+    let taskNum = +(<HTMLInputElement>event.target).value - 1;
+
+    function between(x, min, max){
+      return x >= min && x <= max;
+    }
+
+    if (between(taskNum, 0, this.tasks.length - 1)){
+      let taskID = this.tasks[taskNum]['_id'];
+      this._httpService.getOneTask(taskID).subscribe(
+        task => {
+          this.retrievedTask = task;
+        },
+        error => {
+          console.log("Error", error);
+        }
+      );
+    }
+    else this.retrievedTask = {
+      title: "Invalid Task Number", 
+      description: "Choose number from All Tasks List"
+    }
   }
 
-  createTaskByService(taskBody){
-    this._httpService.createTask(taskBody).subscribe(
-      task => {
-        console.log("Created Task:", task);
-      },
-      error => {
-        console.log("Error:", error);
-      }
-    );
-  }
-
-  updateTaskByService(taskID, taskBody){
-    this._httpService.updateTask(taskID, taskBody).subscribe(
+  editTask(taskIndex){
+    let taskID = this.tasks[taskIndex]['_id'];
+    this._httpService.updateTask(taskID, this.editedTask).subscribe(
       task => {
         console.log("Updated Task:", task);
+        this.tasks[taskIndex] = task;
       },
       error => {
         console.log("Error:", error);
       }
     );
+
+    //close edit task form
+    this.editFormID = -1;
   }
 
-  deleteTaskByService(taskID){
+  deleteTask(taskIndex){
+    let taskID = this.tasks[taskIndex]['_id'];
     this._httpService.deleteTask(taskID).subscribe(
       task => {
         console.log("Deleted Task:", task);
+
+        // remove the deleted task from this.tasks array
+        // this.tasks.splice(this.tasks.findIndex(t => t['_id'] == task['_id']), 1);
+        this.tasks.splice(taskIndex, 1);
       },
       error => {
         console.log("Error:", error);
