@@ -27,9 +27,9 @@
     <!-- EDIT TASK FORM -->
     <div class="edit-task-container" *ngIf="editFormID == i">
       <form (submit)="editTask(i)">
-        <input type="text" name="editedTask.title" placeholder="{{ task.title }}"
+        <input type="text" name="editedTask.title"
           [(ngModel)]="editedTask.title" />
-        <input type="text" name="editedTask.description" placeholder="{{ task.description }}"
+        <input type="text" name="editedTask.description"
           [(ngModel)]="editedTask.description" />
         <input type="submit" value="Edit Task" />  
       </form>

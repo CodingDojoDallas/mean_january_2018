@@ -32,6 +32,17 @@ export class AppComponent implements OnInit{
 
     // Moves Edit Form to different task box
     this.editFormID = taskIndex;
+
+    // Sets default values for editing in form
+    let taskID = this.tasks[taskIndex]['_id'];
+    this._httpService.getOneTask(taskID).subscribe(
+      task => {
+        this.editedTask = task;
+      },
+      error => {
+        console.log("Error", error);
+      }
+    );
   }
 
   createTask(){
@@ -92,7 +103,6 @@ export class AppComponent implements OnInit{
     let taskID = this.tasks[taskIndex]['_id'];
     this._httpService.updateTask(taskID, this.editedTask).subscribe(
       task => {
-        console.log("Updated Task:", task);
         this.tasks[taskIndex] = task;
       },
       error => {

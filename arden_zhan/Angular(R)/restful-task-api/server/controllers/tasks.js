@@ -22,7 +22,9 @@ module.exports = {
         const task = new Task(req.body);
         task.save((err) => {
             if (err) return res.status(400).json(err);
-            return res.json(task);
+            // Why should I redirect, get after post?
+            // return res.json(task);
+            return res.redirect(`/tasks/${task['_id']}`);
         });
     },
 
