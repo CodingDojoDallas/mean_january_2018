@@ -1,6 +1,7 @@
 var express = require("express");
 var path = require("path");
 var app = express();
+var port = 8000
 
 app.use(express.static(path.join(__dirname, "./static")));
 app.set('views', path.join(__dirname, './views'));
@@ -11,8 +12,9 @@ app.get('/', (req, res) => {
 })
 
 // Listen
-var server = app.listen(8000, () => { console.log('Listening on port 8000'); });
-var io = require('socket.io').listen(server);
+var server = app.listen(port, () => { console.log(`Listening on port ${port}`); });
+
+var io = require('socket.io')(server, { wsEngine: 'ws' }).listen(server);
 
 var users = [];
 var messages = [];
