@@ -1,16 +1,16 @@
-// const tasks = require('../controllers/tasks.js');
-// const path  = require('path');
+const users     = require('../controllers/users');
+const sessions  = require('../controllers/sessions');
 
 module.exports = (app) => {
-  app.get ('/', (req, res) => {
-    res.render('index');
-  })
 
-  // app.get     ('/tasks'       ,   tasks.retrieveAll);
-  // app.get     ('/tasks/:id'   ,   tasks.retrieveOne);
-  // app.post    ('/tasks'       ,   tasks.create);
-  // app.put     ('/tasks/:id'   ,   tasks.update);
-  // app.delete  ('/tasks/:id'   ,   tasks.delete);
-  
-  // app.all('**', (req, res) => { res.sendFile(path.resolve('./client/dist/index.html')) });
+  app.get('/', (req, res) => {res.render('index') });
+
+  app.get('/users', users.retrieveAll);
+  app.get('/users/:id', users.retrieveOne);
+  app.post('/users', users.create);
+
+  app.post('/sessions', sessions.create);
+  app.post('/sessions/delete', sessions.delete);
+
+  app.all('**', (req, res) => { res.redirect('/') });
 }

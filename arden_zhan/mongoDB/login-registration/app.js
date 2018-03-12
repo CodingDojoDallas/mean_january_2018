@@ -4,8 +4,8 @@ const bodyParser  = require('body-parser');
 const path        = require('path');
 
 const app         = express();
-const routes      = require('./server/config/routes.js');
-const mongoose    = require('./server/config/mongoose.js');
+const routes      = require('./server/config/routes');
+const mongoose    = require('./server/config/mongoose');
 const port        = 8000;
 
 app.use(express.static(path.join(__dirname, './client/static')));
@@ -19,6 +19,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 routes(app);

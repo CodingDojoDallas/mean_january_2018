@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>User Page</title>
+</head>
+<body>
+  <nav>
+    <a href="/users">All Users</a>
+    <form action="/sessions/delete" method="post">
+      <button>Logout</button>
+    </form>
+  </nav>
+
+  <h1><%= user.full_name %>'s Page</h1>
+
+  <div class="email">
+    Email: <span><%= user.email %></span>
+  </div>
+
+  <div class="birthday">
+    Birthday: <span><%= user.birthday %></span>
+  </div>
+  
+  
+</body>
+</html>
