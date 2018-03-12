@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const Task     = require('../models/task');
+const Task = require('../models/task');
 
 module.exports = {
     retrieveAll: (req, res) => {
