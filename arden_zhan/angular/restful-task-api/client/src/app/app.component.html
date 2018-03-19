@@ -7,7 +7,7 @@
 <button (click)="toggleTasks()">{{ showToggleText }}</button>
 
 <!-- CREATE TASK -->
-<form (submit)="createTask()" *ngIf="tasks.length > 0">
+<form (submit)="createTask()">
     <input type="text" name="newTask.title" placeholder="Title" 
       [(ngModel)]="newTask.title"/>
     <input type="text" name="newTask.description" placeholder="Description"
