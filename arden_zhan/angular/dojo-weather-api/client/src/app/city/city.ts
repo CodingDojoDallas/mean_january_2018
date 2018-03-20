@@ -12,5 +12,6 @@ export class City {
     tempHigh;
     tempLow;
     status;
+    img;
 
 }

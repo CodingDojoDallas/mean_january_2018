@@ -22,7 +22,7 @@ export class CityService {
 
   getCityInfo(cityID){
     let key = "1e34d590abde2d815b3cae8998df9a16";
-    return this._http.get(`http://api.openweathermap.org/data/2.5/weather?id=${cityID}&appid=${key}`)
+    return this._http.get(`http://api.openweathermap.org/data/2.5/weather?id=${cityID}&appid=${key}&units=imperial`)
   }
 
 }

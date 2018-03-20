@@ -13,6 +13,11 @@ import { CityService } from './city/city.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CityNavComponent } from './city/city-nav/city-nav.component';
 
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +29,10 @@ import { CityNavComponent } from './city/city-nav/city-nav.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule,
+    MatCardModule,
+    MatListModule
   ],
   providers: [CityService],
   bootstrap: [AppComponent]

@@ -35,6 +35,7 @@ export class CityComponent implements OnInit {
             this.city$.tempHigh = cityData['main']['temp_max'];
             this.city$.tempLow  = cityData['main']['temp_min'];
             this.city$.status   = cityData['weather'][0]['description'];
+            this.city$.img      = `assets/images/${this.city$.name.replace(/\s/g, '')}.jpg`
           },
           (error) => {
             this.error = "Error: " + error['error']['message'];
