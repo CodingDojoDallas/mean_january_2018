@@ -4,4 +4,5 @@
 .env
 bootstrap.sh
 VagrantFile
+bower_components
 node_modules
