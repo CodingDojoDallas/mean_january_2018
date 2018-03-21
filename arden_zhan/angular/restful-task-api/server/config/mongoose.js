@@ -1,5 +1,3 @@
-const mongoose  = require('mongoose');
-const db_name   = 'restful_task_api';
+const mongoose = require('mongoose');
 
-// mongoose.connect(`mongodb://localhost/${db_name}`);
-mongoose.connect('mongodb://arden:password@ds213229.mlab.com:13229/restful-tasks-api')
+mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}`);

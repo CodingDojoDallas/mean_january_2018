@@ -3,8 +3,10 @@ const session     = require('express-session');
 const bodyParser  = require('body-parser');
 const path        = require('path');
 
+
 const app         = express();
 const routes      = require('./server/config/routes');
+const env         = require('dotenv').config();
 const mongoose    = require('./server/config/mongoose');
 const port        = 8000;
 
