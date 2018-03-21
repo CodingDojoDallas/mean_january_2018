@@ -1,7 +1,7 @@
 .DS_Store
 .idea
 .vagrant
+.env
 bootstrap.sh
 VagrantFile
-bower_components/
 node_modules
