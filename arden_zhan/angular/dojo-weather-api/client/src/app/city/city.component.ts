@@ -35,13 +35,26 @@ export class CityComponent implements OnInit {
             this.city$.tempHigh = cityData['main']['temp_max'];
             this.city$.tempLow  = cityData['main']['temp_min'];
             this.city$.status   = cityData['weather'][0]['description'];
-            this.city$.img      = `assets/images/${this.city$.name.replace(/\s/g, '')}.jpg`
+            this.city$.img      = this.getImage(cityData['name']);
+            // this.city$.img      = `assets/images/${this.city$.name.replace(/\s/g, '')}.jpg`
           },
           (error) => {
             this.error = "Error: " + error['error']['message'];
           }
       );
     });
+  }
+
+  getImage(city: string) {
+    switch (city) {
+      case 'Chicago':           return 'https://i.imgur.com/IJVkrYN.jpg';
+      case 'Washington, D. C.': return 'https://i.imgur.com/4XaftFR.jpg';
+      case 'Dallas':            return 'https://i.imgur.com/kdRoz58.jpg';
+      case 'Burbank':           return 'https://i.imgur.com/Xd3Z63E.jpg';
+      case 'San Jose':          return 'https://i.imgur.com/OqBq9gS.jpg';
+      case 'Seattle':           return 'https://i.imgur.com/cyuQXYB.jpg';
+      default: return '';
+    }
   }
 
 }
