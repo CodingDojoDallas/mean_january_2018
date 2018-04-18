@@ -1,0 +1,5 @@
+<h1>Dojo Weather Forecast</h1>
+<p>
+  <a *ngFor="let city of cities" [routerLink]="[city]">{{ city }}</a>
+</p>
+<router-outlet></router-outlet>

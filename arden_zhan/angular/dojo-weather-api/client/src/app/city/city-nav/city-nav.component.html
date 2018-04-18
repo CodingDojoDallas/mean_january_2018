@@ -1,0 +1,9 @@
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+      *ngFor="let city of cityList"
+      [routerLink]="city.id"
+      routerLinkActive #rla="routerLinkActive"
+      [active]="rla.isActive">
+    {{city.name}}
+  </a>
+</nav>

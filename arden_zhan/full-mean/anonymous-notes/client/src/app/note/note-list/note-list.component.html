@@ -1,0 +1,10 @@
+<a [routerLink]="['/note', 'new']">New Note</a>
+
+<h1>Note List</h1>
+<div class='container'>
+  <fieldset *ngFor="let note of notes">
+    <legend>Title: {{ note.title }}</legend>
+    <p>Content: {{ note.content }}</p>
+    <p>Created: {{ note.createdAt | date:'medium' }}</p>
+  </fieldset>
+</div>

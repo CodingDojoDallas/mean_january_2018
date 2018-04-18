@@ -1,0 +1,17 @@
+<h1>Power Levels</h1>
+
+<div class="header">
+  <form class="power-input">
+    Initial Power Level: 
+    <select name="level" required [(ngModel)]="powerlevel" #level="ngModel">
+      <option *ngFor="let level of levels" value="{{ level }}">{{ level }}</option>
+    </select>
+    <p class="error" *ngIf="!level.valid && level.dirty">Initial Power Level should be 1-100</p>
+  </form>
+
+  <img src="https://vignette.wikia.nocookie.net/character-stats-and-profiles/images/a/a9/SSB_KK20_Goku.png/revision/latest?cb=20171122211046" alt="Goku">
+</div>
+
+<div class="info">
+  <app-user *ngFor="let user of users; let i = index" [myUser]="users[i]" [powerLevel]="powerlevel"></app-user>
+</div>

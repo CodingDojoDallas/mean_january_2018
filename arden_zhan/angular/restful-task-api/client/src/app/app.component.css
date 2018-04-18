@@ -1,0 +1,10 @@
+.tasks-container {
+    display: inline-block;
+    width: 300px;
+}
+
+.retrieved-task-container {
+    vertical-align: top;
+    width: 300px;
+    display: inline-block;
+}

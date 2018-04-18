@@ -1,0 +1,22 @@
+.single-product {
+    padding: 20px;
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+img{
+    width: 200px;
+}
+
+.edit {
+    background: orange;
+}
+
+.delete {
+    color: white;
+    background: red;
+}

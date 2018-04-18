@@ -1,0 +1,11 @@
+<div *ngIf="city == null">Invalid City</div>
+
+<div *ngIf="cityInfo.name !== undefined">
+  <h1>{{ cityInfo.name | titlecase }}</h1>
+  <h4>Humidity: {{ cityInfo.humidity }}</h4>
+  <h4>Temperature (Average): {{ cityInfo.tempAvg }}</h4>
+  <h4>Temperature (High): {{ cityInfo.tempHigh }}</h4>
+  <h4>Temperature (Low): {{ cityInfo.tempLow }}</h4>
+  <h4>Status: {{ cityInfo.status }}</h4>
+</div>
+

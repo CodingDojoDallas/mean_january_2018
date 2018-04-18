@@ -1,0 +1,12 @@
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.logs {
+    height: 200px;
+    overflow-y: scroll;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group Chat</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/index-socket.js"></script>
+</head>
+<body>
+    <h2>Conversation Board</h2>
+    <div class='chat-container'>
+        <div class='messages-container'></div>
+        <div class='users-container'>
+            <p class='online-count-container'>Online Users: <span class='online-count'></span></div>
+        </div>
+    </div>
+    <form>
+        <input type="text" name="content" placeholder="enter your message here">
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>

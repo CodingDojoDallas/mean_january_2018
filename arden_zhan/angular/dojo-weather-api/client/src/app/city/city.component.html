@@ -1,0 +1,18 @@
+<mat-card class='city-card' *ngIf="!error">
+
+  <mat-card-title>{{ city$.name }}</mat-card-title>
+  <mat-card-subtitle>{{ city$.id }}</mat-card-subtitle>
+  <img mat-card-image [src]="city$.img" alt="{{ city$.name }}">
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>Humidity: {{ city$.humidity }}%</mat-list-item>
+      <mat-list-item>Temp Avg: {{ city$.tempAvg }} °F</mat-list-item>
+      <mat-list-item>Temp High: {{ city$.tempHigh }} °F</mat-list-item>
+      <mat-list-item>Temp Low: {{ city$.tempLow }} °F</mat-list-item>
+      <mat-list-item>Status: {{ city$.status | titlecase }}</mat-list-item>
+    </mat-list>
+  </mat-card-content>
+
+</mat-card>
+
+<p *ngIf="error">{{ error }}</p>

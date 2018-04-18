@@ -1,0 +1,11 @@
+img, form {
+    display: inline-block;
+}
+
+.header {
+    border: 2px solid black;
+}
+
+.power-input{
+    vertical-align: top;
+}

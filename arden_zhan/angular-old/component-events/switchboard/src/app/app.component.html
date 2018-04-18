@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Switchboard</h1>
+  <div class="switches" *ngFor='let switch of switches; let i = index'>
+    <button [ngClass]="{ 'on': switch, 'off': !switch }" (click)='toggle(i)'>
+      {{ switch? 'ON' : 'OFF' }}
+    </button>
+  </div>
+</div>
+
+
+
+

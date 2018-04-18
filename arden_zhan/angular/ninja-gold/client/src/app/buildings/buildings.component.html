@@ -1,0 +1,13 @@
+<mat-card *ngFor="let building of buildings" class="building-card">
+  <mat-card-title>{{ building.name }}</mat-card-title>
+  <mat-card-content>
+    {{ building.minGold }} to {{ building.maxGold }} gold!
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary"
+      (click)="updateGold(building)"
+    >
+    {{ building.name }}!
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>Adventure Log</mat-card-title>
+  <mat-card-content [style.overflow]="'auto'" [style.height.px]="'104'">
+    <mat-list>
+      <mat-list-item *ngFor="let message of messages">
+        <span *ngIf="message.gold > 0" class="green">You earned {{ message.gold }} gold at the {{ message.building }}!</span>
+        <span *ngIf="message.gold < 0" class="red">You lost {{ message.gold }} gold at the {{ message.building }}!</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

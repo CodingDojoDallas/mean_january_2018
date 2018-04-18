@@ -1,0 +1,50 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<button (click)="toggleTasks()">{{ showToggleText }}</button>
+
+<!-- CREATE TASK -->
+<form (submit)="createTask()">
+    <input type="text" name="newTask.title" placeholder="Title" 
+      [(ngModel)]="newTask.title"/>
+    <input type="text" name="newTask.description" placeholder="Description"
+      [(ngModel)]="newTask.description" />
+    <input type="submit" value="Create Task" />
+</form>
+
+<!-- ALL TASKS -->
+<div *ngIf="tasks.length > 0" class="tasks-container">
+  <h2>All Tasks</h2>
+  <fieldset *ngFor="let task of tasks; let i = index">
+    <legend>{{ i+1 }}. {{ task.title }}</legend>
+    <p>{{ task.description }}</p>
+    <button (click)="generateFormID(i)">Edit</button>
+    <button (click)="deleteTask(i)">Delete</button>
+
+    <!-- EDIT TASK FORM -->
+    <div class="edit-task-container" *ngIf="editFormID == i">
+      <form (submit)="editTask(i)">
+        <input type="text" name="editedTask.title"
+          [(ngModel)]="editedTask.title" />
+        <input type="text" name="editedTask.description"
+          [(ngModel)]="editedTask.description" />
+        <input type="submit" value="Edit Task" />  
+      </form>
+    </div>
+
+  </fieldset>
+</div>
+
+<!-- RETRIEVE TASK -->
+<div class="retrieved-task-container" *ngIf="tasks.length > 0">
+  <h2>Retrieve Task</h2>
+  <form>
+    <input (keyup)="retrieveTask($event)" placeholder="Retrieve Task Number">
+  </form>
+  <span *ngIf="retrievedTask != undefined">
+    {{ retrievedTask.title }}: {{ retrievedTask.description }}
+  </span>
+</div>

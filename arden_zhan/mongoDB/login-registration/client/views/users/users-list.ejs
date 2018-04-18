@@ -1,0 +1,14 @@
+<html>
+<head>
+  <title>All Users</title>
+</head>
+<body>
+  <h1>Users List</h1>
+  
+  <% for (var user in users) { %>
+    <p><a href="/users/<%= users[user]._id  %>"><%= users[user].full_name %></a></p>
+    <p><%= users[user].email %> | <%= users[user].birthday %></p>
+    <hr>
+  <% } %>
+</body>
+</html>

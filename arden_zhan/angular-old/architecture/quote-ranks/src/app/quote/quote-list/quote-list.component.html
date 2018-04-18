@@ -1,0 +1,15 @@
+<h1>Quotes List</h1>
+<div class='quote-container' *ngFor='let quote of quotes'>
+  <div class='quote-body'>
+    <p>{{ quote.content }}</p>
+    <p> - {{ quote.author }}</p>
+  </div>
+  <div class='votes'>
+    {{ quote.votes }}
+  </div>
+  <div class='voting'>
+    <button class='up' (click)="up(quote)">Vote Up</button>
+    <button class='down' (click)="down(quote)">Vote Down</button>
+    <button class='delete' (click)="delete(quote)">Delete</button>
+  </div>
+</div>

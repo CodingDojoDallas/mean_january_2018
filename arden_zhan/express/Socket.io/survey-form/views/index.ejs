@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/index-socket.js"></script>
+</head>
+<body>
+    <div class="message">
+        <p class="form-data"></p>
+        <p class="lucky-number"></p>
+    </div>
+    
+    <form>
+        <p>Your Name: <input type="text" name="name"></p>
+        <p>Dojo Location: 
+            <select name="location">
+                <option>Mountain View</option>
+                <option>Dallas</option>
+                <option>San Jose</option>
+            </select>
+        </p>
+        <p>Favorite Langauge: 
+            <select name="language">
+                <option>JavaScript</option>
+                <option>Python</option>
+                <option>Ruby</option>
+            </select>
+        </p>
+        <p>Comment:</p>
+        <textarea name="comment"></textarea>
+
+        <p><input type="submit" value="Submit"></p>
+    </form>
+</body>
+</html>

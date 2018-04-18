@@ -1,0 +1,33 @@
+<a [routerLink]="['/note']">All Notes</a>
+
+<form (submit)="onSubmit()" #createNote="ngForm">
+  <p>
+  <input
+    name="title"
+    required
+    minlength="2"
+    maxlength="20"
+    [(ngModel)]="note.title"
+    #title="ngModel"
+    placeholder="Title"
+
+  />
+  <span *ngIf="title.errors">{{ title.errors | json }}</span>
+  </p>
+
+  <p>
+  <textarea
+    name="content"
+    required
+    minlength="5"
+    maxlength="320"
+    [(ngModel)]="note.content"
+    #content="ngModel"
+    placeholder="Content"
+
+  ></textarea>
+  <span *ngIf="content.errors">{{ content.errors | json }}</span>
+  </p>
+
+  <button [disabled]="!createNote.valid" type="submit">Create Note</button>
+</form>

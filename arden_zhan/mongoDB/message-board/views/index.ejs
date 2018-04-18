@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Board</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Message Board</h1>
+
+        <% if(typeof(errors) != 'undefined' ) { %>
+            <% for (var x in errors) { %>
+                <h3><%= errors[x].message %></h3>
+            <% } %>
+        <% } %>
+
+        <form action="/add_post" method="post">
+            <p>Name: </p>
+            <p><input type="text" name="author"></p>
+            <p>Message: </p>
+            <textarea name="content"></textarea>
+            <p><input type="submit" value="Post a Message"></p>
+        </form>
+
+        <% if (typeof(posts) != 'undefined') { %>
+        <div class="posts">
+            <% for (var i = 0; i < posts.length; i++) { %>
+            <div class="post">
+                <h2>Name: <%= posts[i].author %></h2>
+                <p class="message"><%= posts[i].content %></p>
+
+                <div class="comments">
+                    <% for (var j = 0; j < posts[i].comments.length; j++) { %>
+                        <h2>Name: <%= posts[i].comments[j].author %></h2>
+                        <p>Comment: <%= posts[i].comments[j].content %></p>
+                    <% } %>
+                    <form action="/add_comment/<%= posts[i]._id %>" method="post">
+                        <p>Name: </p>
+                        <p><input type="text" name="author"></p>
+                        <p>Comment: </p>
+                        <textarea name="content"></textarea>
+                        <p><input type="submit" value="Post a Comment"></p>
+                    </form>
+                </div>
+
+            </div>
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<form
+  (submit)="onSubmit(); createPost.resetForm()"
+  #createPost="ngForm"
+>
+  <label>Title</label>
+  <input
+    type="text"
+    name="title"
+    required
+    minlength="4"
+    maxlength="30"
+    [(ngModel)]="post.title"
+    #title="ngModel"
+  />
+  {{ title.errors | json }}
+
+  <label>Content</label>
+  <textarea
+    type="text"
+    name="content"
+    required
+    minlength="4"
+    maxlength="200"
+    [(ngModel)]="post.content"
+    #content="ngModel"
+  ></textarea>
+  {{ content.errors | json }}
+
+  <button type="submit">Create Post</button>
+</form>
+
+<div *ngFor="let post of posts">
+  <p>Title: {{ post.title }}</p>
+  <p>Content: {{ post.content }}</p>
+  <p>User: {{ post._user.name }}</p>
+</div>
